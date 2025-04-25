@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact & FAQ - AI Gen Pro</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logo.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/Images/logo.png" color="#a259ff" />
+    <link rel="shortcut icon" href="/Images/logo.png" />
+    <meta name="msapplication-TileColor" content="#a259ff" />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#a259ff" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      .contact-hero {
+        min-height: 90vh;
+        padding: 160px 0 120px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+      }
+
+      .contact-hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        background: linear-gradient(to right, #ffffff, var(--primary-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+          0 0 20px rgba(255, 255, 255, 0.2);
+      }
+
+      .contact-hero-subtitle {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: #a259ff;
+      }
+
+      .contact-hero-description {
+        margin-bottom: 2rem;
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .contact-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .stat-item {
+        background: rgba(30, 30, 46, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        padding: 15px 20px;
+        flex: 1;
+        min-width: 120px;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .stat-item:hover {
+        transform: translateY(-5px);
+        background: rgba(108, 99, 255, 0.2);
+      }
+
+      .stat-number {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 5px;
+      }
+
+      .stat-label {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .hero-cta {
+        margin-top: 30px;
+      }
+
+      .hero-cta .btn {
+        padding: 12px 24px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+      }
+
+      .hero-cta .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-image-container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-image {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .image-glow {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: radial-gradient(
+          circle at center,
+          rgba(108, 99, 255, 0.3) 0%,
+          transparent 70%
+        );
+        filter: blur(25px);
+        z-index: -1;
+        opacity: 0.8;
+      }
+
+      @media (max-width: 991px) {
+        .contact-hero {
+          padding: 120px 0 80px;
+          min-height: 80vh;
+        }
+
+        .contact-hero-title {
+          font-size: 2.5rem;
+        }
+
+        .contact-hero-subtitle {
+          font-size: 1.5rem;
+        }
+
+        .contact-stats {
+          flex-direction: column;
+        }
+
+        .stat-item {
+          width: 100%;
+        }
+      }
+
+      /* FAQ styles */
+      .faq-section {
+        padding: 100px 0;
+        position: relative;
+        background: linear-gradient(
+          180deg,
+          transparent,
+          rgba(13, 13, 22, 0.7),
+          transparent
+        );
+      }
+
+      .faq-container {
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .faq-categories {
+        margin-bottom: 30px;
+      }
+
+      .nav-pills .nav-link {
+        color: var(--text-secondary);
+        background: rgba(255, 255, 255, 0.05);
+        border: var(--glass-border);
+        margin: 0 5px;
+        padding: 8px 20px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-pills .nav-link.active {
+        color: white;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        box-shadow: 0 4px 15px rgba(162, 89, 255, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .nav-pills .nav-link:hover:not(.active) {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .accordion-item {
+        background: transparent;
+        border: none;
+        margin-bottom: 15px;
+      }
+
+      .accordion-button {
+        background: rgba(30, 30, 46, 0.4);
+        border: var(--glass-border);
+        border-radius: var(--border-radius) !important;
+        color: white;
+        font-weight: 600;
+        padding: 20px 25px;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+
+      .accordion-button:not(.collapsed) {
+        background: rgba(162, 89, 255, 0.1);
+        color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      }
+
+      .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      }
+
+      .accordion-body {
+        background: rgba(30, 30, 46, 0.2);
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        padding: 25px;
+        color: var(--text-secondary);
+        font-size: 1rem;
+        line-height: 1.6;
+        border: var(--glass-border);
+        border-top: none;
+      }
+
+      .accordion-body p:last-child {
+        margin-bottom: 0;
+      }
+
+      .accordion-body ul {
+        padding-left: 20px;
+      }
+
+      .accordion-body ul li {
+        margin-bottom: 10px;
+        position: relative;
+      }
+
+      .faq-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        margin-right: 15px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        flex-shrink: 0;
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+      }
+
+      .faq-question {
+        flex: 1;
+      }
+
+      .faq-footer {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .ask-question-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .ask-question-link:hover {
+        color: var(--secondary-color);
+        text-decoration: underline;
+      }
+
+      .modal-content.glassmorphism-card {
+        background: rgba(30, 30, 46, 0.8);
+        backdrop-filter: blur(10px);
+        border: var(--glass-border);
+      }
+
+      .modal-title {
+        color: white;
+        font-weight: 600;
+      }
+
+      .modal .form-label {
+        color: var(--text-color);
+      }
+
+      .modal .form-control {
+        background: rgba(255, 255, 255, 0.1);
+        border: var(--glass-border);
+        color: white;
+        padding: 12px 15px;
+      }
+
+      .modal .form-control:focus {
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 0 0 3px rgba(162, 89, 255, 0.25);
+        border-color: rgba(162, 89, 255, 0.5);
+      }
+
+      .modal .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      @media (max-width: 768px) {
+        .faq-container {
+          padding: 25px 15px;
+        }
+
+        .accordion-button {
+          padding: 15px;
+        }
+
+        .accordion-body {
+          padding: 20px 15px;
+        }
+
+        .nav-pills .nav-link {
+          margin: 0 3px;
+          padding: 6px 12px;
+          font-size: 0.9rem;
+        }
+      }
+
+      /* Contact card social icons */
+      .social-icons-contact {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .social-card .social-icons-contact:first-of-type {
+        margin-top: 20px;
+      }
+
+      .social-icon-contact {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .social-icon-contact:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 6px 15px rgba(162, 89, 255, 0.4);
+        color: white;
+      }
+
+      .footer-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #a259ff;
+        position: relative;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      .footer-contact-info {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      .footer-contact-info li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        color: var(--text-secondary);
+      }
+
+      .footer-contact-info i {
+        color: #a259ff;
+        font-size: 18px;
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header/Navigation -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <div class="logo">
+                <img
+                  src="Images/logo.png"
+                  alt="AI Gen Pro Logo"
+                  class="logo-img"
+                />
+                <span class="logo-text">AI Gen Pro</span>
+              </div>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="contact.html">Contact </a>
+                </li>
+                <li class="nav-item ms-3">
+                  <a
+                    class="btn btn-primary btn-demo"
+                    href="https://wa.me/7058052505"
+                    target="_blank"
+                    >Get Started</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Hero Section -->
+    <section class="contact-hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="contact-hero-content" data-aos="fade-up">
+              <h1 class="contact-hero-title">Get In Touch</h1>
+              <h2 class="contact-hero-subtitle">Let's Connect & Collaborate</h2>
+              <div class="contact-hero-description">
+                <p>
+                  Ready to elevate your business with AI-powered solutions? Our
+                  team of experts is here to understand your needs and design
+                  the perfect solution tailored to your business requirements.
+                  Reach out today to start your AI transformation journey.
+                </p>
+              </div>
+              <div class="contact-stats">
+                <div class="stat-item">
+                  <div class="stat-number">24/7</div>
+                  <div class="stat-label">Support</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">5 minutes</div>
+                  <div class="stat-label">Response Time</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">98%</div>
+                  <div class="stat-label">Satisfaction</div>
+                </div>
+              </div>
+              <div class="hero-cta mt-4">
+                <a
+                  href="https://wa.me/7058052505"
+                  target="_blank"
+                  class="btn btn-primary me-3"
+                  >WhatsApp Us</a
+                >
+                <a
+                  href="#"
+                  class="btn btn-outline-light"
+                  data-bs-toggle="modal"
+                  data-bs-target="#askQuestionModal"
+                  >Ask a Question</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="hero-image-container">
+              <img
+                src="Images/contact us.svg"
+                alt="Contact Us Illustration"
+                class="img-fluid hero-image"
+              />
+              <div class="image-glow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="contact-cards-container">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="feature-card contact-card">
+                    <div class="feature-icon">
+                      <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="feature-title">Email Us</h3>
+                    <p class="feature-text">
+                      <a href="mailto:support@aigenpro.com" class="contact-link"
+                        >support@aigenpro.com</a
+                      >
+                    </p>
+                    <p class="feature-text">
+                      <a href="mailto:sales@aigenpro.com" class="contact-link"
+                        >sales@aigenpro.com</a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="feature-card contact-card">
+                    <div class="feature-icon">
+                      <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Call Us</h3>
+                    <p class="feature-text">
+                      <a href="tel:+917058052505" class="contact-link"
+                        >+91 7058052505</a
+                      >
+                    </p>
+                    <p class="feature-text">
+                      Monday to Saturday, 9am - 6pm IST
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="feature-card contact-card social-card">
+                    <div class="feature-icon">
+                      <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Connect With Us</h3>
+                    <div class="social-icons-contact">
+                      <a
+                        href="https://wa.me/7058052505"
+                        target="_blank"
+                        class="social-icon-contact"
+                        aria-label="WhatsApp"
+                      >
+                        <i class="fab fa-whatsapp"></i>
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/"
+                        target="_blank"
+                        class="social-icon-contact"
+                        aria-label="LinkedIn"
+                      >
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
+                      <a
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        class="social-icon-contact"
+                        aria-label="Instagram"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                    <div class="social-icons-contact mt-3">
+                      <a
+                        href="https://twitter.com/"
+                        target="_blank"
+                        class="social-icon-contact"
+                        aria-label="Twitter"
+                      >
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                      <a
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        class="social-icon-contact"
+                        aria-label="Facebook"
+                      >
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                      <a
+                        href="https://t.me/aigenpro"
+                        target="_blank"
+                        class="social-icon-contact"
+                        aria-label="Telegram"
+                      >
+                        <i class="fab fa-telegram-plane"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="section-badge"></div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Find answers to the most common questions about our AI solutions
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="glassmorphism-card faq-container">
+              <div class="faq-categories mb-4">
+                <ul
+                  class="nav nav-pills justify-content-center"
+                  id="faqCategories"
+                  role="tablist"
+                >
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="general-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#general"
+                      type="button"
+                      role="tab"
+                      aria-controls="general"
+                      aria-selected="true"
+                    >
+                      General
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="services-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#services"
+                      type="button"
+                      role="tab"
+                      aria-controls="services"
+                      aria-selected="false"
+                    >
+                      Services
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="implementation-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#implementation"
+                      type="button"
+                      role="tab"
+                      aria-controls="implementation"
+                      aria-selected="false"
+                    >
+                      Implementation
+                    </button>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="tab-content" id="faqCategoriesContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="general"
+                  role="tabpanel"
+                  aria-labelledby="general-tab"
+                >
+                  <div class="accordion" id="generalAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne"
+                          aria-expanded="true"
+                          aria-controls="collapseOne"
+                        >
+                          <span class="faq-icon"
+                            ><i class="fas fa-info-circle"></i
+                          ></span>
+                          <span class="faq-question"
+                            >What is AI Gen Pro and how can it help my
+                            business?</span
+                          >
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#generalAccordion"
+                      >
+                        <div class="accordion-body">
+                          <p>
+                            AI Gen Pro is a comprehensive AI solution provider
+                            that helps businesses automate operations, enhance
+                            customer experience, and eliminate repetitive tasks.
+                            We offer custom AI solutions including AI calling
+                            agents, workflow automation, and conversational
+                            chatbots tailored to your specific business needs.
+                            Our solutions help reduce operational costs,
+                            increase efficiency, and provide 24/7 customer
+                            support capabilities.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingThree">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseThree"
+                          aria-expanded="false"
+                          aria-controls="collapseThree"
+                        >
+                          <span class="faq-icon"
+                            ><i class="fas fa-plug"></i
+                          ></span>
+                          <span class="faq-question"
+                            >Can AI Gen Pro integrate with my existing business
+                            tools?</span
+                          >
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseThree"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingThree"
+                        data-bs-parent="#generalAccordion"
+                      >
+                        <div class="accordion-body">
+                          <p>
+                            Yes, AI Gen Pro is designed to integrate seamlessly
+                            with your existing tech stack. We offer integrations
+                            with popular business tools including CRM systems
+                            (Salesforce, HubSpot), scheduling tools (Calendly,
+                            Google Calendar), communication platforms (Slack,
+                            Teams), project management tools (Asana, Trello),
+                            and document management systems (Google Drive,
+                            Notion). If you use a custom or less common tool,
+                            our team can build custom integrations to ensure a
+                            smooth workflow.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingSix">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseSix"
+                          aria-expanded="false"
+                          aria-controls="collapseSix"
+                        >
+                          <span class="faq-icon"
+                            ><i class="fas fa-shield-alt"></i
+                          ></span>
+                          <span class="faq-question"
+                            >How do you ensure data security and privacy?</span
+                          >
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseSix"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingSix"
+                        data-bs-parent="#generalAccordion"
+                      >
+                        <div class="accordion-body">
+                          <p>
+                            We take data security and privacy extremely
+                            seriously. Our security measures include:
+                          </p>
+                          <ul>
+                            <li>
+                              End-to-end encryption for all data in transit and
+                              at rest
+                            </li>
+                            <li>
+                              Strict access controls and authentication
+                              protocols
+                            </li>
+                            <li>
+                              Regular security audits and penetration testing
+                            </li>
+                            <li>
+                              Compliance with industry regulations (GDPR, HIPAA,
+                              etc.)
+                            </li>
+                            <li>Data processing agreements with clear terms</li>
+                          </ul>
+                          <p>
+                            We never sell or share your data with third parties,
+                            and you maintain ownership of all your business data
+                            at all times.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="tab-pane fade"
+                  id="services"
+                  role="tabpanel"
+                  aria-labelledby="services-tab"
+                >
+                  <div class="accordion" id="servicesAccordion">
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseTwo"
+                          aria-expanded="true"
+                          aria-controls="collapseTwo"
+                        >
+                          <span class="faq-icon"
+                            ><i class="fas fa-phone-volume"></i
+                          ></span>
+                          <span class="faq-question"
+                            >How does your AI calling agent work?</span
+                          >
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseTwo"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingTwo"
+                        data-bs-parent="#servicesAccordion"
+                      >
+                        <div class="accordion-body">
+                          <p>
+                            Our AI calling agents are virtual voice assistants
+                            that sound like real receptionists. They can handle
+                            inbound and outbound calls, schedule appointments,
+                            answer frequently asked questions, and provide
+                            information about your products or services 24/7.
+                            The AI is trained on your business data and can be
+                            customized to match your brand voice. It integrates
+                            with your existing systems (like CRM or calendar)
+                            for seamless operation.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Additional Service FAQ Item -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingSeven">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseSeven"
+                          aria-expanded="false"
+                          aria-controls="collapseSeven"
+                        >
+                          <span class="faq-icon"
+                            ><i class="fas fa-comments"></i
+                          ></span>
+                          <span class="faq-question"
+                            >What makes your chatbots different from
+                            others?</span
+                          >
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseSeven"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingSeven"
+                        data-bs-parent="#servicesAccordion"
+                      >
+                        <div class="accordion-body">
+                          <p>Our AI chatbots stand out for several reasons:</p>
+                          <ul>
+                            <li>
+                              <strong>Advanced NLP capabilities</strong> - Our
+                              chatbots understand context and natural language,
+                              creating more human-like conversations
+                            </li>
+                            <li>
+                              <strong>Personalization</strong> - Each chatbot is
+                              trained on your specific business data to
+                              accurately represent your brand
+                            </li>
+                            <li>
+                              <strong>Multi-platform support</strong> - Deploy
+                              on websites, WhatsApp, Facebook, and other
+                              channels from a single source
+                            </li>
+                            <li>
+                              <strong>Continuous learning</strong> - Our systems
+                              improve over time based on real conversations
+                            </li>
+                            <li>
+                              <strong>Seamless handoff</strong> - Intelligent
+                              escalation to human agents when needed
+                            </li>
+                          </ul>
+                          <p>
+                            We focus on creating conversational experiences that
+                            genuinely help users rather than frustrate them with
+                            rigid, scripted responses.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Additional Service FAQ Item -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingEight">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseEight"
+                          aria-expanded="false"
+                          aria-controls="collapseEight"
+                        >
+                          <span class="faq-icon"
+                            ><i class="fas fa-cogs"></i
+                          ></span>
+                          <span class="faq-question"
+                            >What types of workflows can you automate?</span
+                          >
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseEight"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingEight"
+                        data-bs-parent="#servicesAccordion"
+                      >
+                        <div class="accordion-body">
+                          <p>
+                            We can automate a wide variety of business workflows
+                            across different departments:
+                          </p>
+                          <ul>
+                            <li>
+                              <strong>Customer Service</strong> - Ticket
+                              routing, automated responses, follow-up scheduling
+                            </li>
+                            <li>
+                              <strong>Sales</strong> - Lead qualification,
+                              meeting scheduling, proposal generation
+                            </li>
+                            <li>
+                              <strong>HR</strong> - Employee onboarding,
+                              document collection, leave approvals
+                            </li>
+                            <li>
+                              <strong>Finance</strong> - Invoice processing,
+                              payment reminders, expense approvals
+                            </li>
+                            <li>
+                              <strong>Operations</strong> - Inventory
+                              management, order processing, service delivery
+                              coordination
+                            </li>
+                          </ul>
+                          <p>
+                            Our team analyzes your current processes to identify
+                            the best automation opportunities with the highest
+                            ROI potential.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="tab-pane fade"
+                  id="implementation"
+                  role="tabpanel"
+                  aria-labelledby="implementation-tab"
+                >
+                  <div class="accordion" id="implementationAccordion">
+                    <!-- FAQ Item 4 -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingFour">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseFour"
+                          aria-expanded="true"
+                          aria-controls="collapseFour"
+                        >
+                          <span class="faq-icon"
+                            ><i class="fas fa-clock"></i
+                          ></span>
+                          <span class="faq-question"
+                            >How long does it take to implement your AI
+                            solutions?</span
+                          >
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseFour"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingFour"
+                        data-bs-parent="#implementationAccordion"
+                      >
+                        <div class="accordion-body">
+                          <p>
+                            Implementation timelines vary based on the
+                            complexity of your needs and the specific solutions
+                            being deployed. Typically:
+                          </p>
+                          <ul>
+                            <li>
+                              Basic chatbots can be deployed within 1-2 weeks
+                            </li>
+                            <li>
+                              AI calling agents take 2-4 weeks to train and
+                              deploy
+                            </li>
+                            <li>
+                              Complex workflow automation projects may take 4-8
+                              weeks
+                            </li>
+                          </ul>
+                          <p>
+                            Our team works efficiently to minimize disruption to
+                            your business operations, with a phased
+                            implementation approach that allows you to see
+                            results quickly while more complex features are
+                            being developed.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingFive">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseFive"
+                          aria-expanded="false"
+                          aria-controls="collapseFive"
+                        >
+                          <span class="faq-icon"
+                            ><i class="fas fa-headset"></i
+                          ></span>
+                          <span class="faq-question"
+                            >What kind of support do you provide after
+                            implementation?</span
+                          >
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseFive"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingFive"
+                        data-bs-parent="#implementationAccordion"
+                      >
+                        <div class="accordion-body">
+                          <p>
+                            We provide comprehensive post-implementation support
+                            to ensure your AI solutions continue to perform
+                            optimally. This includes:
+                          </p>
+                          <ul>
+                            <li>24/7 technical support for critical issues</li>
+                            <li>
+                              Regular performance reviews and optimization
+                            </li>
+                            <li>
+                              Continuous training and improvement of AI models
+                            </li>
+                            <li>Monthly usage reports and analytics</li>
+                            <li>Training sessions for your team members</li>
+                          </ul>
+                          <p>
+                            We offer different support tiers based on your
+                            needs, ranging from basic support to full managed
+                            service options.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Additional Implementation FAQ Item -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingNine">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseNine"
+                          aria-expanded="false"
+                          aria-controls="collapseNine"
+                        >
+                          <span class="faq-icon"
+                            ><i class="fas fa-users"></i
+                          ></span>
+                          <span class="faq-question"
+                            >Do you provide training for our team?</span
+                          >
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseNine"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingNine"
+                        data-bs-parent="#implementationAccordion"
+                      >
+                        <div class="accordion-body">
+                          <p>
+                            Yes, comprehensive training is an essential part of
+                            our implementation process. We provide:
+                          </p>
+                          <ul>
+                            <li>
+                              <strong>Admin training</strong> - For staff who
+                              will manage the AI systems
+                            </li>
+                            <li>
+                              <strong>User training</strong> - For team members
+                              who will interact with the systems
+                            </li>
+                            <li>
+                              <strong>Documentation</strong> - Detailed guides
+                              and resources for reference
+                            </li>
+                            <li>
+                              <strong>Video tutorials</strong> - Visual
+                              walk-throughs of common tasks
+                            </li>
+                            <li>
+                              <strong>Refresher sessions</strong> - Additional
+                              training as needed
+                            </li>
+                          </ul>
+                          <p>
+                            Our goal is to ensure your team feels confident and
+                            empowered to get the most value from your AI
+                            solutions.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-footer text-center mt-4">
+                <p>
+                  Don't see your question here?
+                  <a
+                    href="#"
+                    class="ask-question-link"
+                    data-bs-toggle="modal"
+                    data-bs-target="#askQuestionModal"
+                    >Ask us directly</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ask Question Modal -->
+    <div
+      class="modal fade"
+      id="askQuestionModal"
+      tabindex="-1"
+      aria-labelledby="askQuestionModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content glassmorphism-card">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="askQuestionModalLabel">
+              Ask a Question
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="questionForm">
+              <div class="mb-3">
+                <label for="questionName" class="form-label">Your Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="questionName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="questionEmail" class="form-label">Your Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="questionEmail"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="questionText" class="form-label"
+                  >Your Question</label
+                >
+                <textarea
+                  class="form-control"
+                  id="questionText"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <div class="text-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary me-2"
+                  data-bs-dismiss="modal"
+                >
+                  Cancel
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  Send Question
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-container" data-aos="zoom-in">
+          <div class="cta-content text-center">
+            <h2 class="cta-title" data-aos="fade-up">
+              Ready to unlock the power of AI for your business?
+            </h2>
+            <p class="cta-subtitle" data-aos="fade-up" data-aos-delay="100">
+              Let's work together to create a custom solution for your needs
+            </p>
+            <a
+              href="https://wa.me/7058052505"
+              target="_blank"
+              class="btn btn-primary btn-lg"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              >Book a Strategy Call</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="cta-shapes">
+        <div class="cta-shape shape-1"></div>
+        <div class="cta-shape shape-2"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div
+            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
+            <div class="footer-brand">
+              <div class="logo">
+                <img
+                  src="Images/logo.png"
+                  alt="AI Gen Pro Logo"
+                  class="logo-img"
+                />
+                <span class="logo-text">AI Gen Pro</span>
+              </div>
+              <p class="footer-desc">
+                Revolutionizing business operations with cutting-edge AI
+                solutions that drive real results.
+              </p>
+              <div class="social-icons">
+                <a
+                  href="https://wa.me/7058052505"
+                  class="social-icon"
+                  target="_blank"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-2 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h4 class="footer-title">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <h4 class="footer-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="services.html#ai-calling">AI Calling</a></li>
+              <li>
+                <a href="services.html#workflow-automation"
+                  >Workflow Automation</a
+                >
+              </li>
+              <li><a href="services.html#ai-chatbots">Chatbots</a></li>
+              <li><a href="services.html">Custom Solutions</a></li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-left"
+            data-aos-delay="400"
+          >
+            <h4 class="footer-title">Contact Us</h4>
+            <ul class="footer-contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>New Delhi, India</span>
+              </li>
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel:+917058052505">+91 7058052505</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:contact@aigenpro.com">contact@aigenpro.in</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>
+            <p class="copyright text-center">
+              © 2025 AI Gen Pro. All rights reserved. Made by Mitul Srivastava
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS animations with better settings
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+        offset: 50,
+        anchorPlacement: "top-bottom",
+        disable: "mobile",
+      });
+    </script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <!-- Contact Form JS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const contactForm = document.getElementById("contactForm");
+        const questionForm = document.getElementById("questionForm");
+
+        if (contactForm) {
+          contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+
+            // Here you would typically send the data to a server
+            // For demo purposes, we'll show an alert
+            alert(
+              `Thank you for your message, ${name}! We'll get back to you soon.`
+            );
+
+            // Reset the form
+            contactForm.reset();
+          });
+        }
+
+        if (questionForm) {
+          questionForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById("questionName").value;
+            const email = document.getElementById("questionEmail").value;
+            const question = document.getElementById("questionText").value;
+
+            // Here you would typically send the data to a server
+            // For demo purposes, we'll show an alert
+            alert(
+              `Thank you for your question, ${name}! We'll respond to ${email} as soon as possible.`
+            );
+
+            // Close modal and reset form
+            const modal = bootstrap.Modal.getInstance(
+              document.getElementById("askQuestionModal")
+            );
+            modal.hide();
+            questionForm.reset();
+          });
+        }
+
+        // Add smooth scrolling for accordion items
+        const accordionButtons = document.querySelectorAll(".accordion-button");
+
+        accordionButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            setTimeout(() => {
+              const collapseElement = document.querySelector(
+                button.getAttribute("data-bs-target")
+              );
+              if (collapseElement.classList.contains("show")) {
+                collapseElement.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+              }
+            }, 350); // Wait for collapse animation
+          });
+        });
+
+        // FAQ search functionality
+        const searchFAQ = () => {
+          const searchInput = document.getElementById("faqSearch");
+          if (!searchInput) return;
+
+          const searchTerm = searchInput.value.toLowerCase();
+          const allFAQs = document.querySelectorAll(".accordion-item");
+          let hasResults = false;
+
+          allFAQs.forEach((faq) => {
+            const questionText = faq
+              .querySelector(".faq-question")
+              .textContent.toLowerCase();
+            const answerText = faq
+              .querySelector(".accordion-body")
+              .textContent.toLowerCase();
+
+            if (
+              questionText.includes(searchTerm) ||
+              answerText.includes(searchTerm)
+            ) {
+              faq.style.display = "block";
+              hasResults = true;
+            } else {
+              faq.style.display = "none";
+            }
+          });
+
+          const noResults = document.getElementById("noFaqResults");
+          if (noResults) {
+            noResults.style.display = hasResults ? "none" : "block";
+          }
+        };
+
+        const faqSearch = document.getElementById("faqSearch");
+        if (faqSearch) {
+          faqSearch.addEventListener("input", searchFAQ);
+        }
+      });
+    </script>
+  </body>
+</html>

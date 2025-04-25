@@ -1,0 +1,8 @@
+# www.robotstxt.org/
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://aigenpro.com/sitemap.xml 

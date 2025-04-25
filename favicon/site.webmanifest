@@ -1,0 +1,19 @@
+{
+  "name": "AI Gen Pro",
+  "short_name": "AigenPro",
+  "icons": [
+    {
+      "src": "/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#a259ff",
+  "background_color": "#0d0d16",
+  "display": "standalone"
+}

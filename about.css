@@ -1,0 +1,311 @@
+/* ====== ABOUT PAGE STYLES ====== */
+:root {
+  --primary-gradient: linear-gradient(135deg, #a259ff, #c084fc);
+  --dark-bg: #0b0b0f;
+  --card-bg: rgba(30, 30, 46, 0.6);
+  --text-color: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --border-radius: 12px;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --glow-shadow: 0 0 15px rgba(162, 89, 255, 0.4);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ====== HERO SECTION ====== */
+.about-hero {
+  padding: 150px 0 80px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--dark-bg);
+  background-image: radial-gradient(
+      circle at 10% 20%,
+      rgba(162, 89, 255, 0.1) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(192, 132, 252, 0.1) 0%,
+      transparent 40%
+    );
+  background-attachment: fixed;
+}
+
+.about-hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  background: rgba(30, 30, 46, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  border: var(--glass-border);
+  padding: 50px;
+  box-shadow: var(--box-shadow);
+}
+
+.about-hero-content {
+  position: relative;
+}
+
+.about-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ffffff, var(--primary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(162, 89, 255, 0.4),
+    0 0 40px rgba(162, 89, 255, 0.3);
+}
+
+.about-hero-subtitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #a259ff;
+}
+
+.about-hero-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.about-hero-description p {
+  max-width: 700px;
+}
+
+/* ====== OUR STORY SECTION ====== */
+.about-story {
+  padding: 100px 0;
+  position: relative;
+  background: linear-gradient(180deg, var(--dark-bg), rgba(13, 13, 22, 0.95));
+}
+
+.story-content {
+  padding: 50px;
+  text-align: center;
+  position: relative;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+  border: var(--glass-border);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(125deg, rgba(162, 89, 255, 0.1), transparent);
+  z-index: 0;
+}
+
+.story-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.mission-statement {
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(162, 89, 255, 0.1);
+  border-radius: var(--border-radius);
+  border-left: 4px solid #a259ff;
+  position: relative;
+  z-index: 1;
+}
+
+.mission-statement p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ====== OUR PROCESS SECTION ====== */
+.about-process {
+  padding: 100px 0;
+  background: linear-gradient(180deg, rgba(13, 13, 22, 0.95), var(--dark-bg));
+  position: relative;
+}
+
+.process-timeline {
+  margin-top: 60px;
+}
+
+.process-step {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  height: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: var(--glass-border);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.process-step::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(125deg, rgba(162, 89, 255, 0.1), transparent);
+  z-index: 0;
+}
+
+.process-step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-gradient);
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: var(--glow-shadow);
+  position: relative;
+  z-index: 1;
+}
+
+.step-content {
+  position: relative;
+  z-index: 1;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.step-description {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.step-icon {
+  font-size: 2rem;
+  color: #a259ff;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.process-step:hover .step-icon {
+  opacity: 1;
+  transform: scale(1.1);
+  text-shadow: 0 0 15px rgba(162, 89, 255, 0.7);
+}
+
+/* ====== CTA SECTION ENHANCEMENTS ====== */
+.btn-glow-xl {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.btn-glow-xl::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn-glow-xl:hover {
+  box-shadow: 0 0 25px rgba(162, 89, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+.btn-glow-xl:hover::before {
+  opacity: 1;
+}
+
+/* ====== RESPONSIVE STYLES ====== */
+@media (max-width: 991px) {
+  .about-hero-container {
+    padding: 40px 30px;
+  }
+
+  .about-hero-title {
+    font-size: 2.8rem;
+  }
+
+  .about-hero-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .process-step {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 120px 0 60px;
+  }
+
+  .about-hero-container {
+    padding: 30px 20px;
+  }
+
+  .about-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .about-hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .mission-statement p {
+    font-size: 1.2rem;
+  }
+
+  .story-content {
+    padding: 30px 20px;
+  }
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

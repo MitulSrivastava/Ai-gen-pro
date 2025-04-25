@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | AI Gen Pro - Smarter Operations. Scaled Results.</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logo.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/Images/logo.png" color="#a259ff" />
+    <link rel="shortcut icon" href="/Images/logo.png" />
+    <meta name="msapplication-TileColor" content="#a259ff" />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#a259ff" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Services CSS -->
+    <link rel="stylesheet" href="services.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      .services-hero {
+        min-height: 90vh;
+        padding: 160px 0 120px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 25px;
+      }
+
+      .hero-badge {
+        background: rgba(108, 99, 255, 0.15);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .hero-badge:hover {
+        background: rgba(108, 99, 255, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .hero-cta {
+        margin-top: 30px;
+      }
+
+      .hero-cta .btn {
+        padding: 12px 24px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+      }
+
+      .hero-cta .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (max-width: 991px) {
+        .services-hero {
+          padding: 120px 0 80px;
+          min-height: 80vh;
+        }
+
+        .hero-badges {
+          flex-wrap: wrap;
+        }
+      }
+
+      .hero-image-container {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-image {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .image-glow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(108, 99, 255, 0.1);
+        border-radius: 10px;
+        z-index: 1;
+      }
+
+      .services-hero-subtitle {
+        color: #a259ff !important;
+      }
+
+      .footer-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #a259ff;
+        position: relative;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      .footer-contact-info {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      .footer-contact-info li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        color: var(--text-secondary);
+      }
+
+      .footer-contact-info i {
+        color: #a259ff;
+        font-size: 18px;
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header/Navigation -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" data-aos="fade-right">
+              <div class="logo">
+                <img
+                  src="Images/logo.png"
+                  alt="AI Gen Pro Logo"
+                  class="logo-img"
+                />
+                <span class="logo-text">AI Gen Pro</span>
+              </div>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item" data-aos="fade-down" data-aos-delay="100">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item" data-aos="fade-down" data-aos-delay="200">
+                  <a class="nav-link active" href="services.html">Services</a>
+                </li>
+                <li class="nav-item" data-aos="fade-down" data-aos-delay="300">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item" data-aos="fade-down" data-aos-delay="400">
+                  <a class="nav-link" href="contact.html">Contact </a>
+                </li>
+                <li
+                  class="nav-item ms-3"
+                  data-aos="fade-down"
+                  data-aos-delay="500"
+                >
+                  <a
+                    class="btn btn-primary btn-demo"
+                    href="https://wa.me/7058052505"
+                    target="_blank"
+                    >Get Started</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Hero Section -->
+    <section class="services-hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="services-hero-content" data-aos="fade-up">
+              <h1 class="services-hero-title" data-aos="fade-up">
+                Our Services
+              </h1>
+              <h2
+                class="services-hero-subtitle"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Powerful AI Solutions for Modern Businesses
+              </h2>
+              <div
+                class="services-hero-description"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <p>
+                  Discover our comprehensive range of AI-powered services
+                  designed to optimize your operations, enhance customer
+                  experiences, and drive innovation. From custom AI
+                  implementation to ongoing support, we provide end-to-end
+                  solutions tailored to your business needs.
+                </p>
+              </div>
+              <div class="hero-badges" data-aos="fade-up" data-aos-delay="300">
+                <span class="hero-badge" data-aos="zoom-in" data-aos-delay="400"
+                  >AI Calling</span
+                >
+                <span class="hero-badge" data-aos="zoom-in" data-aos-delay="500"
+                  >Workflow Automation</span
+                >
+                <span class="hero-badge" data-aos="zoom-in" data-aos-delay="600"
+                  >Chatbots</span
+                >
+                <span class="hero-badge" data-aos="zoom-in" data-aos-delay="700"
+                  >Custom Solutions</span
+                >
+              </div>
+              <div
+                class="hero-cta mt-4"
+                data-aos="fade-up"
+                data-aos-delay="800"
+              >
+                <a href="#ai-calling" class="btn btn-primary me-3"
+                  >Explore Services</a
+                >
+                <a href="contact.html" class="btn btn-outline-light"
+                  >Get a Quote</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="hero-image-container">
+              <img
+                src="Images/Artificial intelligence-pana.svg"
+                alt="AI Services Illustration"
+                class="img-fluid hero-image"
+              />
+              <div class="image-glow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Calling Agents Section -->
+    <section class="service-section" id="ai-calling">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+            <div class="service-content">
+              <div class="service-badge" data-aos="zoom-in">01</div>
+              <h2 class="service-title" data-aos="fade-up">
+                AI Calling Agents
+              </h2>
+              <p
+                class="service-description"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Virtual voice agents that sound natural, book appointments,
+                qualify leads, answer FAQs, and handle follow-ups — just like a
+                real employee.
+              </p>
+              <ul class="service-features">
+                <li data-aos="fade-up" data-aos-delay="150">
+                  <i class="fas fa-check-circle"></i> Receptionist replacement
+                </li>
+                <li data-aos="fade-up" data-aos-delay="200">
+                  <i class="fas fa-check-circle"></i> Lead qualification &
+                  routing
+                </li>
+                <li data-aos="fade-up" data-aos-delay="250">
+                  <i class="fas fa-check-circle"></i> Customer support & sales
+                  calls
+                </li>
+                <li data-aos="fade-up" data-aos-delay="300">
+                  <i class="fas fa-check-circle"></i> Automated appointment
+                  confirmations
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="btn btn-glow"
+                data-aos="zoom-in"
+                data-aos-delay="350"
+                >See Voice AI in Action</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="service-image">
+              <img
+                src="Images/calling.svg"
+                alt="AI Calling Agents"
+                class="img-fluid rounded"
+              />
+              <div class="image-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow Automation Section -->
+    <section class="service-section" id="workflow-automation">
+      <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+            <div class="service-content">
+              <div class="service-badge" data-aos="zoom-in">02</div>
+              <h2 class="service-title" data-aos="fade-up">
+                Workflow Automation
+              </h2>
+              <p
+                class="service-description"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                We build custom automations using tools like n8n, Zapier, and
+                custom APIs to reduce your workload and eliminate repetitive
+                tasks.
+              </p>
+              <ul class="service-features">
+                <li data-aos="fade-up" data-aos-delay="150">
+                  <i class="fas fa-check-circle"></i> Client onboarding
+                </li>
+                <li data-aos="fade-up" data-aos-delay="200">
+                  <i class="fas fa-check-circle"></i> Invoice & payment tracking
+                </li>
+                <li data-aos="fade-up" data-aos-delay="250">
+                  <i class="fas fa-check-circle"></i> Email/text workflows
+                </li>
+                <li data-aos="fade-up" data-aos-delay="300">
+                  <i class="fas fa-check-circle"></i> CRM data sync
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="btn btn-glow"
+                data-aos="zoom-in"
+                data-aos-delay="350"
+                >View Automation Examples</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="service-image">
+              <img
+                src="Images/automation.svg"
+                alt="Workflow Automation"
+                class="img-fluid rounded"
+              />
+              <div class="image-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Chatbots Section -->
+    <section class="service-section" id="ai-chatbots">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+            <div class="service-content">
+              <div class="service-badge" data-aos="zoom-in">03</div>
+              <h2 class="service-title" data-aos="fade-up">AI Chatbots</h2>
+              <p
+                class="service-description"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Conversational chatbots that engage visitors, qualify leads, and
+                support users 24/7 — integrated with your website, WhatsApp, or
+                Messenger.
+              </p>
+              <ul class="service-features">
+                <li data-aos="fade-up" data-aos-delay="150">
+                  <i class="fas fa-check-circle"></i> Natural Language
+                  Processing (NLP)
+                </li>
+                <li data-aos="fade-up" data-aos-delay="200">
+                  <i class="fas fa-check-circle"></i> Product & service
+                  recommendations
+                </li>
+                <li data-aos="fade-up" data-aos-delay="250">
+                  <i class="fas fa-check-circle"></i> Escalation to humans
+                </li>
+                <li data-aos="fade-up" data-aos-delay="300">
+                  <i class="fas fa-check-circle"></i> Multilingual support
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="btn btn-glow"
+                data-aos="zoom-in"
+                data-aos-delay="350"
+                >See Chatbots in Action</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="service-image">
+              <img
+                src="Images/Chat bot.svg"
+                alt="AI Chatbots"
+                class="img-fluid rounded"
+              />
+              <div class="image-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-container" data-aos="zoom-in">
+          <div class="cta-content text-center">
+            <h2 class="cta-title" data-aos="fade-up">
+              Ready to transform your business with AI?
+            </h2>
+            <p class="cta-subtitle" data-aos="fade-up" data-aos-delay="100">
+              Get a personalized demo tailored to your business needs
+            </p>
+            <a
+              href="https://wa.me/7058052505"
+              target="_blank"
+              class="btn btn-primary btn-lg"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              >Schedule a Free Consultation</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="cta-shapes">
+        <div class="cta-shape shape-1"></div>
+        <div class="cta-shape shape-2"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div
+            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
+            <div class="footer-brand">
+              <div class="logo">
+                <img
+                  src="Images/logo.png"
+                  alt="AI Gen Pro Logo"
+                  class="logo-img"
+                />
+                <span class="logo-text">AI Gen Pro</span>
+              </div>
+              <p class="footer-desc">
+                Revolutionizing business operations with cutting-edge AI
+                solutions that drive real results.
+              </p>
+              <div class="social-icons">
+                <a
+                  href="https://wa.me/7058052505"
+                  class="social-icon"
+                  target="_blank"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-2 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h4 class="footer-title">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <h4 class="footer-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="services.html#ai-calling">AI Calling</a></li>
+              <li>
+                <a href="services.html#workflow-automation"
+                  >Workflow Automation</a
+                >
+              </li>
+              <li><a href="services.html#ai-chatbots">Chatbots</a></li>
+              <li><a href="services.html">Custom Solutions</a></li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-left"
+            data-aos-delay="400"
+          >
+            <h4 class="footer-title">Contact Us</h4>
+            <ul class="footer-contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>New Delhi, India</span>
+              </li>
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel:+917058052505">+91 7058052505</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:contact@aigenpro.com">contact@aigenpro.in</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>
+            <p class="copyright text-center">
+              © 2025 AI Gen Pro. All rights reserved. Made by Mitul Srivastava
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script>
+      // Initialize AOS animations with better settings
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+        offset: 50,
+        anchorPlacement: "top-bottom",
+        disable: "mobile",
+      });
+
+      // Add scroll event listener for additional effects
+      window.addEventListener("scroll", function () {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        // Add/remove active class based on scroll position
+        const serviceSection = document.querySelectorAll(".service-section");
+        serviceSection.forEach((section) => {
+          const sectionTop = section.offsetTop - 300;
+          const sectionHeight = section.offsetHeight;
+
+          if (
+            scrollTop >= sectionTop &&
+            scrollTop < sectionTop + sectionHeight
+          ) {
+            section.classList.add("active");
+          }
+        });
+      });
+
+      // Button hover animations
+      document.querySelectorAll(".btn-glow").forEach((btn) => {
+        btn.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-5px)";
+          this.style.boxShadow = "0 10px 20px rgba(162, 89, 255, 0.4)";
+        });
+
+        btn.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0)";
+          this.style.boxShadow = "0 5px 15px rgba(162, 89, 255, 0.3)";
+        });
+      });
+
+      // Add parallax effect to service images
+      document.querySelectorAll(".service-image").forEach((image) => {
+        window.addEventListener("mousemove", (e) => {
+          const mouseX = e.clientX / window.innerWidth - 0.5;
+          const mouseY = e.clientY / window.innerHeight - 0.5;
+
+          if (isElementInViewport(image)) {
+            image.style.transform = `translate(${mouseX * 20}px, ${
+              mouseY * 20
+            }px)`;
+          }
+        });
+      });
+
+      // Helper function to check if element is in viewport
+      function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+          rect.top <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.left <=
+            (window.innerWidth || document.documentElement.clientWidth) &&
+          rect.bottom >= 0 &&
+          rect.right >= 0
+        );
+      }
+    </script>
+  </body>
+</html>
