@@ -61,6 +61,13 @@
     />
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Calendly Widget JS -->
+    <script
+      type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async
+    ></script>
   </head>
   <body>
     <!-- Header/Navigation -->
@@ -98,6 +105,9 @@
                   <a class="nav-link" href="services.html">Services</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="industries.html">Industries</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
@@ -105,9 +115,10 @@
                 </li>
                 <li class="nav-item">
                   <a
-                    class="btn btn-primary btn-demo"
-                    href="https://wa.me/7058052505"
+                    class="btn btn-primary btn-demo calendly-open-button"
+                    href="#"
                     target="_blank"
+                    aria-label="Get Started"
                     >Get Started</a
                   >
                 </li>
@@ -123,7 +134,8 @@
       <div class="container">
         <div class="hero-badge-wrapper text-center mb-3">
           <div class="hero-badge d-inline-block">
-            <span><i class="fas fa-star-half-alt"></i></span> AI agents
+            <span><i class="fas fa-star-half-alt"></i></span> Plug-and-play
+            setup
           </div>
         </div>
         <h1 class="hero-title text-center">
@@ -156,9 +168,15 @@
             href="https://wa.me/7058052505"
             target="_blank"
             class="btn btn-primary btn-lg"
+            aria-label="Start Building Now"
             >Start Building Now</a
           >
-          <a href="#" class="btn btn-outline-light btn-lg">Let's connect</a>
+          <a
+            href="#"
+            class="btn btn-outline-light btn-lg calendly-open-button"
+            aria-label="Let's connect"
+            >Let's connect</a
+          >
         </div>
 
         <div
@@ -402,7 +420,12 @@
               </div>
             </div>
             <div class="testimonial-buttons text-center">
-              <a href="#" class="btn btn-primary">Talk to Our Experts</a>
+              <a
+                href="#"
+                class="btn btn-primary calendly-open-button"
+                aria-label="Talk to Our Experts"
+                >Talk to Our Experts</a
+              >
             </div>
           </div>
         </div>
@@ -419,9 +442,10 @@
             </h2>
             <a
               href="#"
-              class="btn btn-primary btn-lg"
+              class="btn btn-primary btn-lg calendly-open-button"
               data-aos="fade-up"
               data-aos-delay="200"
+              aria-label="Start Building Smarter"
               >Start Building Smarter</a
             >
           </div>
@@ -480,6 +504,7 @@
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
               <li><a href="services.html">Services</a></li>
+              <li><a href="industries.html">Industries</a></li>
               <li><a href="about.html">About Us</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -533,6 +558,38 @@
       </div>
     </footer>
 
+    <!-- Calendly Modal -->
+    <div
+      class="modal fade"
+      id="calendlyModal"
+      tabindex="-1"
+      aria-labelledby="calendlyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="calendlyModalLabel">
+              Schedule a Meeting
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="calendly-inline-widget"
+              data-url="https://calendly.com/aigenpro900?background_color=1a1a1a&text_color=ffffff&primary_color=a259ff"
+              style="min-width: 320px; height: 700px"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Framer Motion -->
@@ -579,6 +636,27 @@
         width: 20px;
         text-align: center;
       }
+
+      /* Modal Styles */
+      .modal-content {
+        background-color: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 12px;
+      }
+
+      .modal-header {
+        border-bottom: 1px solid #333;
+      }
+
+      .modal-title {
+        color: #a259ff;
+        font-weight: 700;
+      }
+
+      .btn-close {
+        color: #ffffff;
+        filter: invert(1) brightness(200%);
+      }
     </style>
     <script>
       AOS.init({
@@ -589,6 +667,31 @@
         offset: 50,
         anchorPlacement: "top-bottom",
         disable: "mobile",
+      });
+
+      // Calendly Modal Functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendlyButtons = document.querySelectorAll(
+          ".calendly-open-button"
+        );
+        const calendlyModal = new bootstrap.Modal(
+          document.getElementById("calendlyModal")
+        );
+
+        calendlyButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+            calendlyModal.show();
+          });
+
+          // For accessibility - allow keyboard interaction
+          button.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              calendlyModal.show();
+            }
+          });
+        });
       });
     </script>
     <!-- Custom JS -->

@@ -35,6 +35,14 @@
     />
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Calendly Widget JS -->
+    <script
+      type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async
+    ></script>
+
     <style>
       .contact-hero {
         min-height: 90vh;
@@ -499,6 +507,9 @@
                   <a class="nav-link" href="services.html">Services</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="industries.html">Industries</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
@@ -506,9 +517,9 @@
                 </li>
                 <li class="nav-item ms-3">
                   <a
-                    class="btn btn-primary btn-demo"
-                    href="https://wa.me/7058052505"
-                    target="_blank"
+                    class="btn btn-primary btn-demo calendly-open-button"
+                    href="#"
+                    aria-label="Get Started"
                     >Get Started</a
                   >
                 </li>
@@ -558,10 +569,9 @@
                 >
                 <a
                   href="#"
-                  class="btn btn-outline-light"
-                  data-bs-toggle="modal"
-                  data-bs-target="#askQuestionModal"
-                  >Ask a Question</a
+                  class="btn btn-outline-light calendly-open-button"
+                  aria-label="Schedule a Meeting"
+                  >Schedule a Meeting</a
                 >
               </div>
             </div>
@@ -1346,6 +1356,38 @@
       </div>
     </div>
 
+    <!-- Calendly Modal -->
+    <div
+      class="modal fade"
+      id="calendlyModal"
+      tabindex="-1"
+      aria-labelledby="calendlyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="calendlyModalLabel">
+              Schedule a Meeting
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="calendly-inline-widget"
+              data-url="https://calendly.com/aigenpro900?background_color=1a1a1a&text_color=ffffff&primary_color=a259ff"
+              style="min-width: 320px; height: 700px"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- CTA Section -->
     <section class="cta-section">
       <div class="container">
@@ -1421,6 +1463,7 @@
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
               <li><a href="services.html">Services</a></li>
+              <li><a href="industries.html">Industries</a></li>
               <li><a href="about.html">About Us</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -1478,128 +1521,39 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
     <script>
-      // Initialize AOS animations with better settings
       AOS.init({
         duration: 800,
         easing: "ease-in-out",
         once: true,
         mirror: false,
-        offset: 50,
-        anchorPlacement: "top-bottom",
-        disable: "mobile",
       });
-    </script>
-    <!-- Custom JS -->
-    <script src="script.js"></script>
-    <!-- Contact Form JS -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const contactForm = document.getElementById("contactForm");
-        const questionForm = document.getElementById("questionForm");
 
-        if (contactForm) {
-          contactForm.addEventListener("submit", (e) => {
+      // Calendly Modal Functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendlyButtons = document.querySelectorAll(
+          ".calendly-open-button"
+        );
+        const calendlyModal = new bootstrap.Modal(
+          document.getElementById("calendlyModal")
+        );
+
+        calendlyButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
             e.preventDefault();
-
-            // Get form values
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const subject = document.getElementById("subject").value;
-            const message = document.getElementById("message").value;
-
-            // Here you would typically send the data to a server
-            // For demo purposes, we'll show an alert
-            alert(
-              `Thank you for your message, ${name}! We'll get back to you soon.`
-            );
-
-            // Reset the form
-            contactForm.reset();
+            calendlyModal.show();
           });
-        }
 
-        if (questionForm) {
-          questionForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            // Get form values
-            const name = document.getElementById("questionName").value;
-            const email = document.getElementById("questionEmail").value;
-            const question = document.getElementById("questionText").value;
-
-            // Here you would typically send the data to a server
-            // For demo purposes, we'll show an alert
-            alert(
-              `Thank you for your question, ${name}! We'll respond to ${email} as soon as possible.`
-            );
-
-            // Close modal and reset form
-            const modal = bootstrap.Modal.getInstance(
-              document.getElementById("askQuestionModal")
-            );
-            modal.hide();
-            questionForm.reset();
-          });
-        }
-
-        // Add smooth scrolling for accordion items
-        const accordionButtons = document.querySelectorAll(".accordion-button");
-
-        accordionButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            setTimeout(() => {
-              const collapseElement = document.querySelector(
-                button.getAttribute("data-bs-target")
-              );
-              if (collapseElement.classList.contains("show")) {
-                collapseElement.scrollIntoView({
-                  behavior: "smooth",
-                  block: "center",
-                });
-              }
-            }, 350); // Wait for collapse animation
-          });
-        });
-
-        // FAQ search functionality
-        const searchFAQ = () => {
-          const searchInput = document.getElementById("faqSearch");
-          if (!searchInput) return;
-
-          const searchTerm = searchInput.value.toLowerCase();
-          const allFAQs = document.querySelectorAll(".accordion-item");
-          let hasResults = false;
-
-          allFAQs.forEach((faq) => {
-            const questionText = faq
-              .querySelector(".faq-question")
-              .textContent.toLowerCase();
-            const answerText = faq
-              .querySelector(".accordion-body")
-              .textContent.toLowerCase();
-
-            if (
-              questionText.includes(searchTerm) ||
-              answerText.includes(searchTerm)
-            ) {
-              faq.style.display = "block";
-              hasResults = true;
-            } else {
-              faq.style.display = "none";
+          // For accessibility - allow keyboard interaction
+          button.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              calendlyModal.show();
             }
           });
-
-          const noResults = document.getElementById("noFaqResults");
-          if (noResults) {
-            noResults.style.display = hasResults ? "none" : "block";
-          }
-        };
-
-        const faqSearch = document.getElementById("faqSearch");
-        if (faqSearch) {
-          faqSearch.addEventListener("input", searchFAQ);
-        }
+        });
       });
     </script>
   </body>
