@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce AI Solutions | AI Gen Pro</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logo.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/Images/logo.png" color="#a259ff" />
+    <link rel="shortcut icon" href="/Images/logo.png" />
+    <meta name="msapplication-TileColor" content="#a259ff" />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#a259ff" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Calendly Widget JS -->
+    <script
+      type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async
+    ></script>
+
+    <style>
+      /* Base styles */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0a101f;
+        color: #ffffff;
+      }
+
+      .industry-hero {
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Hero content */
+      .industry-hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(90deg, #ffffff, #a5b4fc);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .industry-hero-subtitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: #a5b4fc;
+      }
+
+      .industry-hero-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #cbd5e1;
+      }
+
+      /* Hero image styling */
+      .hero-image-container {
+        position: relative;
+        padding: 20px;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .hero-image {
+        position: relative;
+        z-index: 2;
+        filter: drop-shadow(0 0 12px rgba(165, 180, 252, 0.3));
+      }
+
+      .image-glow {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(
+          circle,
+          rgba(165, 180, 252, 0.2) 0%,
+          rgba(10, 16, 31, 0) 70%
+        );
+        border-radius: 50%;
+        z-index: 1;
+        filter: blur(25px);
+      }
+
+      /* Floating icons */
+      .about-floating-icon {
+        position: absolute;
+        z-index: 3;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(4px);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        color: #a5b4fc;
+      }
+
+      .about-icon-1 {
+        width: 60px;
+        height: 60px;
+        top: 20%;
+        left: 10%;
+        font-size: 24px;
+        animation: float 5s ease-in-out infinite;
+      }
+
+      .about-icon-2 {
+        width: 50px;
+        height: 50px;
+        bottom: 25%;
+        left: 15%;
+        font-size: 20px;
+        animation: float 7s ease-in-out infinite;
+      }
+
+      .about-icon-3 {
+        width: 45px;
+        height: 45px;
+        top: 30%;
+        right: 15%;
+        font-size: 18px;
+        animation: float 6s ease-in-out infinite 1s;
+      }
+
+      /* Background shapes */
+      .hero-shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .shape {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+      }
+
+      .shape-1 {
+        width: 300px;
+        height: 300px;
+        background: linear-gradient(
+          135deg,
+          rgba(79, 70, 229, 0.15) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        top: -50px;
+        right: -100px;
+      }
+
+      .shape-2 {
+        width: 400px;
+        height: 400px;
+        background: linear-gradient(
+          135deg,
+          rgba(239, 68, 68, 0.1) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        bottom: -200px;
+        left: -100px;
+      }
+
+      .shape-3 {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(
+          135deg,
+          rgba(16, 185, 129, 0.12) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        top: 30%;
+        left: 20%;
+      }
+
+      /* Buttons */
+      .btn-primary {
+        background: linear-gradient(90deg, #4f46e5, #7e22ce);
+        border: none;
+        padding: 10px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+        background: linear-gradient(90deg, #4338ca, #6d28d9);
+      }
+
+      .btn-outline-light {
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        padding: 10px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        background: transparent;
+      }
+
+      .btn-outline-light:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* Animation */
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 991px) {
+        .industry-hero {
+          padding: 60px 0;
+        }
+
+        .industry-hero-title {
+          font-size: 2.5rem;
+        }
+
+        .industry-hero-subtitle {
+          font-size: 1.25rem;
+        }
+
+        .hero-image-container {
+          margin-top: 40px;
+        }
+
+        .about-floating-icon {
+          display: none;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .industry-hero-title {
+          font-size: 2rem;
+        }
+
+        .industry-hero-subtitle {
+          font-size: 1.1rem;
+        }
+      }
+
+      /* Features section */
+      .feature-card {
+        background: rgba(30, 30, 46, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        background: rgba(108, 99, 255, 0.1);
+        border: 1px solid rgba(162, 89, 255, 0.3);
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #6c63ff, #a259ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+      }
+
+      .feature-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #fff;
+      }
+
+      .feature-description {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .benefit-item {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: flex-start;
+      }
+
+      .benefit-icon {
+        color: #a259ff;
+        font-size: 1.5rem;
+        margin-right: 15px;
+        min-width: 24px;
+      }
+
+      .benefit-text {
+        color: var(--text-secondary);
+      }
+
+      .benefit-title {
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+      }
+
+      .comparison-table {
+        background: rgba(61, 41, 76, 0.7);
+        border: 1px solid rgba(162, 89, 255, 0.2);
+        border-radius: 12px;
+        padding: 40px;
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .comparison-table::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(162, 89, 255, 0.08) 0%,
+          rgba(108, 99, 255, 0.02) 70%
+        );
+        z-index: -1;
+      }
+
+      .comparison-table .table {
+        --bs-table-bg: transparent !important;
+        --bs-table-striped-bg: transparent !important;
+        --bs-table-active-bg: transparent !important;
+        --bs-table-hover-bg: transparent !important;
+        background-color: transparent !important;
+      }
+
+      .comparison-table table {
+        color: var(--text-secondary);
+        margin-bottom: 0;
+        background-color: transparent !important;
+      }
+
+      .comparison-table th {
+        color: #a259ff;
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background-color: rgba(108, 99, 255, 0.3) !important;
+      }
+
+      .comparison-table th:first-child {
+        border-top-left-radius: 8px;
+      }
+
+      .comparison-table th:last-child {
+        border-top-right-radius: 8px;
+        color: #a259ff;
+      }
+
+      .comparison-table td {
+        padding: 15px 20px;
+        font-size: 1.05rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+        background-color: rgba(108, 99, 255, 0.15) !important;
+        color: #ffffff;
+      }
+
+      .comparison-table tbody tr:nth-child(odd) td {
+        background-color: rgba(108, 99, 255, 0.12) !important;
+        color: #ffffff;
+      }
+
+      .comparison-table td.feature {
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .comparison-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .comparison-table tbody tr {
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .comparison-table tbody tr td:nth-child(3)::before {
+        content: "✓ ";
+        display: inline-block;
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 0.3s ease;
+      }
+
+      .comparison-table tbody tr:hover {
+        transform: translateX(5px);
+      }
+
+      .comparison-table tbody tr:hover td {
+        background-color: rgba(108, 99, 255, 0.2) !important;
+      }
+
+      .testimonial {
+        background: rgba(30, 30, 46, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 30px;
+        margin: 20px 0;
+      }
+
+      .testimonial-content {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        font-style: italic;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .testimonial-author-name {
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 5px;
+      }
+
+      .testimonial-author-position {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      .highlight-box {
+        display: flex;
+        align-items: center;
+        background: rgba(30, 30, 46, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .highlight-box:hover {
+        transform: translateY(-5px);
+        background: rgba(108, 99, 255, 0.1);
+        border: 1px solid rgba(162, 89, 255, 0.3);
+      }
+
+      .highlight-icon {
+        font-size: 1.8rem;
+        margin-right: 15px;
+        color: #a259ff;
+      }
+
+      .highlight-text {
+        font-size: 1.1rem;
+        color: #fff;
+        font-weight: 500;
+      }
+
+      @media (max-width: 991px) {
+        .industry-hero {
+          padding: 100px 0;
+          min-height: auto;
+        }
+
+        .industry-hero-title {
+          font-size: 2.5rem;
+        }
+      }
+      .footer-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #a259ff;
+        position: relative;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      .footer-contact-info {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      .footer-contact-info li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        color: var(--text-secondary);
+      }
+
+      .footer-contact-info i {
+        color: #a259ff;
+        font-size: 18px;
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+      }
+
+      /* Add purple hamburger menu styling */
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(162, 89, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header/Navigation -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <div class="logo">
+                <img
+                  src="Images/logo.png"
+                  alt="AI Gen Pro Logo"
+                  class="logo-img"
+                />
+                <span class="logo-text">AI Gen Pro</span>
+              </div>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="industries.html"
+                    >Industries</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item ms-3">
+                  <a
+                    class="btn btn-primary btn-demo calendly-open-button"
+                    href="#"
+                    aria-label="Get Started"
+                    >Get Started</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="industry-hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h1 class="industry-hero-title">
+              Turn Browsers into Buyers — Automatically
+            </h1>
+            <h2 class="industry-hero-subtitle">
+              AI Chatbots and Voice Agents That Recommend, Assist, and Convert
+              24/7
+            </h2>
+            <div class="industry-hero-description mb-4">
+              <p>
+                Supercharge Your E-commerce Growth with AI Gen Pro. Imagine a
+                store that never closes, never leaves a customer's question
+                unanswered, and automatically recommends the perfect product at
+                the perfect time.
+              </p>
+            </div>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a
+                href="https://wa.me/7058052505"
+                target="_blank"
+                class="btn btn-primary"
+                aria-label="Schedule a Demo"
+                data-aos="fade-up"
+                data-aos-delay="300"
+                >Schedule a Demo</a
+              >
+              <a
+                href="#features"
+                class="btn btn-outline-light"
+                aria-label="Explore Features"
+                data-aos="fade-up"
+                data-aos-delay="400"
+                >Explore Features</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="hero-image-container position-relative">
+              <img
+                src="Images/e-commerce.svg"
+                alt="E-commerce AI Solutions Illustration"
+                class="img-fluid hero-image"
+              />
+              <div class="image-glow"></div>
+              <!-- Floating icons -->
+              <div class="about-floating-icon about-icon-1">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="about-floating-icon about-icon-2">
+                <i class="fas fa-tags"></i>
+              </div>
+              <div class="about-floating-icon about-icon-3">
+                <i class="fas fa-chart-line"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center" data-aos="fade-up">
+            <h2 class="section-title">E-commerce, Powered by AI Gen Pro</h2>
+            <div class="section-description mx-auto" style="max-width: 800px">
+              <p>
+                That's what AI Gen Pro delivers — scaling your sales, boosting
+                customer happiness, and reducing support costs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Benefits Section -->
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2 class="section-title">Core Benefits</h2>
+          <p class="section-subtitle">
+            AI-powered features to revolutionize your online store
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Benefit 1 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-tags"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">
+                  Personalized AI Product Recommendations
+                </h3>
+                <p class="benefit-text">
+                  Offer shoppers custom-tailored product suggestions based on
+                  browsing history, behavior, and preferences — boosting upsells
+                  and cross-sells.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-shipping-fast"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">
+                  Order Tracking and Customer Support
+                </h3>
+                <p class="benefit-text">
+                  Answer "Where's my order?" questions instantly, manage
+                  returns, and handle FAQs without overwhelming your human
+                  support team.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">Recover Abandoned Carts</h3>
+                <p class="benefit-text">
+                  Automatically follow up with customers who leave without
+                  purchasing, bringing them back to complete their orders.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 4 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-bullhorn"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">
+                  Real-Time Promotions and Notifications
+                </h3>
+                <p class="benefit-text">
+                  Deliver flash sale alerts, restock notifications, and special
+                  offers through chat, voice, or SMS.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 5 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">24/7 Availability</h3>
+                <p class="benefit-text">
+                  While your human team rests, your AI team keeps selling —
+                  globally, across time zones.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 6 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">
+                  Human-Like Conversational Experience
+                </h3>
+                <p class="benefit-text">
+                  Natural conversations that guide users, answer questions, and
+                  drive confidence to buy.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 7 -->
+          <div class="col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="700">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-plug"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">Easy Integration</h3>
+                <p class="benefit-text">
+                  Works with Shopify, WooCommerce, Magento, and other major
+                  e-commerce platforms — no tech headaches.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2 class="section-title">Traditional vs. AI-Powered E-commerce</h2>
+          <p class="section-subtitle">
+            See how our AI solutions compare to traditional approaches
+          </p>
+        </div>
+
+        <div class="comparison-table" data-aos="fade-up">
+          <div class="table-responsive">
+            <table
+              class="table table-borderless"
+              style="background-color: transparent !important"
+            >
+              <thead>
+                <tr>
+                  <th
+                    style="
+                      width: 25%;
+                      background-color: rgba(108, 99, 255, 0.3) !important;
+                      color: #a259ff;
+                    "
+                  >
+                    Feature
+                  </th>
+                  <th
+                    style="
+                      width: 37.5%;
+                      background-color: rgba(108, 99, 255, 0.3) !important;
+                      color: #a259ff;
+                    "
+                  >
+                    Traditional Store
+                  </th>
+                  <th
+                    style="
+                      width: 37.5%;
+                      background-color: rgba(108, 99, 255, 0.3) !important;
+                      color: #a259ff;
+                    "
+                  >
+                    AI Gen Pro E-commerce Solutions
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="feature"
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Customer Support
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Limited hours, slow response
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    24/7 instant support
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="feature"
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Product Recommendations
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Generic suggestions
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Personalized real-time offers
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="feature"
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Cart Recovery
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Manual emails
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Automated, AI-driven recovery
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="feature"
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Order Tracking
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Customer emails and delays
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Instant bot responses
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="feature"
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Promotions
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    One-size-fits-all offers
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Targeted, dynamic promotions
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="feature"
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Setup
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Requires dev resources
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Plug-and-play integration
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-container" data-aos="zoom-in">
+          <div class="cta-content text-center">
+            <h2 class="cta-title" data-aos="fade-up">
+              Your Always-On E-commerce Assistant is Here
+            </h2>
+            <div class="row justify-content-center mt-4">
+              <div class="col-md-8">
+                <div class="row">
+                  <div
+                    class="col-md-4 mb-3"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
+                    <div class="highlight-box text-center">
+                      <div class="highlight-text">
+                        <i class="fas fa-check-circle me-2"></i> More Sales
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-md-4 mb-3"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <div class="highlight-box text-center">
+                      <div class="highlight-text">
+                        <i class="fas fa-check-circle me-2"></i> Happier
+                        Customers
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-md-4 mb-3"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    <div class="highlight-box text-center">
+                      <div class="highlight-text">
+                        <i class="fas fa-check-circle me-2"></i> Lower Support
+                        Costs
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+              <a
+                href="https://wa.me/7058052505"
+                target="_blank"
+                class="btn btn-primary btn-lg"
+                data-aos="fade-up"
+                data-aos-delay="400"
+                aria-label="Contact Us Today"
+                >Contact Us Today</a
+              >
+              <a
+                href="#"
+                class="btn btn-outline-light btn-lg calendly-open-button"
+                data-aos="fade-up"
+                data-aos-delay="500"
+                aria-label="Schedule a Demo"
+                >Schedule a Demo</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-shapes">
+        <div class="cta-shape shape-1"></div>
+        <div class="cta-shape shape-2"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div
+            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
+            <div class="footer-brand">
+              <div class="logo">
+                <img
+                  src="Images/logo.png"
+                  alt="AI Gen Pro Logo"
+                  class="logo-img"
+                />
+                <span class="logo-text">AI Gen Pro</span>
+              </div>
+              <p class="footer-desc">
+                Revolutionizing business operations with cutting-edge AI
+                solutions that drive real results.
+              </p>
+              <div class="social-icons">
+                <a
+                  href="https://wa.me/7058052505"
+                  class="social-icon"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a href="#" class="social-icon" aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/aigen.pro/"
+                  class="social-icon"
+                  aria-label="Instagram"
+                  target="_blank"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-2 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h4 class="footer-title">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="industries.html">Industries</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-2 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <h4 class="footer-title">Industries</h4>
+            <ul class="footer-links">
+              <li><a href="e-commerce.html">E-commerce</a></li>
+              <li><a href="healthcare.html">Healthcare</a></li>
+              <li><a href="real-estate.html">Real Estate</a></li>
+              <li><a href="industries.html">View All</a></li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <h4 class="footer-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="services.html#ai-calling">AI Calling</a></li>
+              <li>
+                <a href="services.html#workflow-automation"
+                  >Workflow Automation</a
+                >
+              </li>
+              <li><a href="services.html#ai-chatbots">Chatbots</a></li>
+              <li><a href="services.html">Custom Solutions</a></li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-2 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-left"
+            data-aos-delay="400"
+          >
+            <h4 class="footer-title">Contact Us</h4>
+            <ul class="footer-contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>New Delhi, India</span>
+              </li>
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel:+917058052505">+91 7058052505</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:contact@aigenpro.com">contact@aigenpro.in</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>
+            <p class="copyright text-center">
+              © 2025 AI Gen Pro. All rights reserved. Made by Mitul Srivastava
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Calendly Modal -->
+    <div
+      class="modal fade"
+      id="calendlyModal"
+      tabindex="-1"
+      aria-labelledby="calendlyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="calendlyModalLabel">
+              Schedule a Meeting
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="calendly-inline-widget"
+              data-url="https://calendly.com/aigenpro900?background_color=1a1a1a&text_color=ffffff&primary_color=a259ff"
+              style="min-width: 320px; height: 700px"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+        offset: 50,
+        anchorPlacement: "top-bottom",
+        disable: "mobile",
+      });
+
+      // Calendly Modal Functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendlyButtons = document.querySelectorAll(
+          ".calendly-open-button"
+        );
+        const calendlyModal = new bootstrap.Modal(
+          document.getElementById("calendlyModal")
+        );
+
+        calendlyButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+            calendlyModal.show();
+          });
+
+          // For accessibility - allow keyboard interaction
+          button.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              calendlyModal.show();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

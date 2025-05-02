@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthcare AI Solutions | AI Gen Pro</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logo.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/Images/logo.png" color="#a259ff" />
+    <link rel="shortcut icon" href="/Images/logo.png" />
+    <meta name="msapplication-TileColor" content="#a259ff" />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#a259ff" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Calendly Widget JS -->
+    <script
+      type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async
+    ></script>
+
+    <style>
+      /* Base styles */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0a101f;
+        color: #ffffff;
+      }
+
+      .industry-hero {
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Hero content */
+      .industry-hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(90deg, #ffffff, #a5b4fc);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .industry-hero-subtitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: #a5b4fc;
+      }
+
+      .industry-hero-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #cbd5e1;
+      }
+
+      /* Hero image styling */
+      .hero-image-container {
+        position: relative;
+        padding: 20px;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .hero-image {
+        position: relative;
+        z-index: 2;
+        filter: drop-shadow(0 0 12px rgba(165, 180, 252, 0.3));
+      }
+
+      .image-glow {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(
+          circle,
+          rgba(165, 180, 252, 0.2) 0%,
+          rgba(10, 16, 31, 0) 70%
+        );
+        border-radius: 50%;
+        z-index: 1;
+        filter: blur(25px);
+      }
+
+      /* Floating icons */
+      .about-floating-icon {
+        position: absolute;
+        z-index: 3;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(4px);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        color: #a5b4fc;
+      }
+
+      .about-icon-1 {
+        width: 60px;
+        height: 60px;
+        top: 20%;
+        left: 10%;
+        font-size: 24px;
+        animation: float 5s ease-in-out infinite;
+      }
+
+      .about-icon-2 {
+        width: 50px;
+        height: 50px;
+        bottom: 25%;
+        left: 15%;
+        font-size: 20px;
+        animation: float 7s ease-in-out infinite;
+      }
+
+      .about-icon-3 {
+        width: 45px;
+        height: 45px;
+        top: 30%;
+        right: 15%;
+        font-size: 18px;
+        animation: float 6s ease-in-out infinite 1s;
+      }
+
+      /* Background shapes */
+      .hero-shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .shape {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+      }
+
+      .shape-1 {
+        width: 300px;
+        height: 300px;
+        background: linear-gradient(
+          135deg,
+          rgba(79, 70, 229, 0.15) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        top: -50px;
+        right: -100px;
+      }
+
+      .shape-2 {
+        width: 400px;
+        height: 400px;
+        background: linear-gradient(
+          135deg,
+          rgba(239, 68, 68, 0.1) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        bottom: -200px;
+        left: -100px;
+      }
+
+      .shape-3 {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(
+          135deg,
+          rgba(16, 185, 129, 0.12) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        top: 30%;
+        left: 20%;
+      }
+
+      /* Buttons */
+      .btn-primary {
+        background: linear-gradient(90deg, #4f46e5, #7e22ce);
+        border: none;
+        padding: 10px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+        background: linear-gradient(90deg, #4338ca, #6d28d9);
+      }
+
+      .btn-outline-light {
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        padding: 10px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        background: transparent;
+      }
+
+      .btn-outline-light:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* Animation */
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      /* Quick highlights */
+      .highlight-badge {
+        display: inline-block;
+        background: rgba(79, 70, 229, 0.1);
+        border: 1px solid rgba(79, 70, 229, 0.2);
+        border-radius: 6px;
+        padding: 8px 16px;
+        margin: 0 10px 10px 0;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #a5b4fc;
+        transition: all 0.3s ease;
+      }
+
+      .highlight-badge:hover {
+        background: rgba(79, 70, 229, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .highlight-badge i {
+        margin-right: 6px;
+        font-size: 0.8rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 991px) {
+        .industry-hero {
+          padding: 60px 0;
+        }
+
+        .industry-hero-title {
+          font-size: 2.5rem;
+        }
+
+        .industry-hero-subtitle {
+          font-size: 1.25rem;
+        }
+
+        .hero-image-container {
+          margin-top: 40px;
+        }
+
+        .about-floating-icon {
+          display: none;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .industry-hero-title {
+          font-size: 2rem;
+        }
+
+        .industry-hero-subtitle {
+          font-size: 1.1rem;
+        }
+      }
+
+      /* Features section */
+      .benefit-item {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: flex-start;
+      }
+
+      .benefit-icon {
+        color: #a259ff;
+        font-size: 1.5rem;
+        margin-right: 15px;
+        min-width: 24px;
+      }
+
+      .benefit-text {
+        color: var(--text-secondary);
+      }
+
+      .benefit-title {
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+      }
+
+      /* Comparison table */
+      .comparison-table {
+        background: rgba(61, 41, 76, 0.7);
+        border: 1px solid rgba(162, 89, 255, 0.2);
+        border-radius: 12px;
+        padding: 40px;
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .comparison-table::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(162, 89, 255, 0.08) 0%,
+          rgba(108, 99, 255, 0.02) 70%
+        );
+        z-index: -1;
+      }
+
+      .comparison-table .table {
+        --bs-table-bg: transparent !important;
+        --bs-table-striped-bg: transparent !important;
+        --bs-table-active-bg: transparent !important;
+        --bs-table-hover-bg: transparent !important;
+        background-color: transparent !important;
+      }
+
+      .comparison-table table {
+        color: var(--text-secondary);
+        margin-bottom: 0;
+        background-color: transparent !important;
+      }
+
+      .comparison-table th {
+        color: #a259ff;
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background-color: rgba(108, 99, 255, 0.3) !important;
+      }
+
+      .comparison-table th:first-child {
+        border-top-left-radius: 8px;
+      }
+
+      .comparison-table th:last-child {
+        border-top-right-radius: 8px;
+        color: #a259ff;
+      }
+
+      .comparison-table td {
+        padding: 15px 20px;
+        font-size: 1.05rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+        background-color: rgba(108, 99, 255, 0.15) !important;
+        color: #ffffff;
+      }
+
+      .comparison-table tbody tr:nth-child(odd) td {
+        background-color: rgba(108, 99, 255, 0.12) !important;
+        color: #ffffff;
+      }
+
+      .comparison-table td.feature {
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .comparison-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .comparison-table tbody tr {
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .comparison-table tbody tr td:nth-child(3)::before {
+        content: "✓ ";
+        display: inline-block;
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 0.3s ease;
+      }
+
+      .comparison-table tbody tr:hover {
+        transform: translateX(5px);
+      }
+
+      .comparison-table tbody tr:hover td {
+        background-color: rgba(108, 99, 255, 0.2) !important;
+      }
+
+      /* Testimonial */
+      .testimonial {
+        background: rgba(30, 30, 46, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 30px;
+        margin: 20px 0;
+      }
+
+      .testimonial-content {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        font-style: italic;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-author {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .testimonial-author-name {
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 5px;
+      }
+
+      .testimonial-author-position {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-container {
+        background: rgba(30, 30, 46, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 60px;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        z-index: 1;
+      }
+
+      .cta-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        background: linear-gradient(to right, #ffffff, var(--primary-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .cta-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        margin-bottom: 30px;
+      }
+
+      .cta-shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .cta-shape {
+        position: absolute;
+        border-radius: 40%;
+        opacity: 0.1;
+      }
+
+      .cta-shape.shape-1 {
+        background: linear-gradient(45deg, #a259ff, #6c63ff);
+        width: 500px;
+        height: 500px;
+        top: -250px;
+        right: -100px;
+        transform: rotate(45deg);
+        animation: rotate 25s linear infinite;
+      }
+
+      .cta-shape.shape-2 {
+        background: linear-gradient(45deg, #6c63ff, #a259ff);
+        width: 600px;
+        height: 600px;
+        bottom: -300px;
+        left: -150px;
+        transform: rotate(-45deg);
+        animation: rotate 30s linear infinite reverse;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .highlight-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(30, 30, 46, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 20px;
+        height: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .highlight-box:hover {
+        transform: translateY(-5px);
+        background: rgba(108, 99, 255, 0.1);
+        border: 1px solid rgba(162, 89, 255, 0.3);
+      }
+
+      .highlight-text {
+        font-size: 1.1rem;
+        color: #fff;
+        font-weight: 500;
+      }
+
+      /* Section styling */
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #fff;
+      }
+
+      .section-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        margin-bottom: 3rem;
+      }
+
+      /* Footer styling */
+      .footer-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #a259ff;
+        position: relative;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      .footer-contact-info {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      .footer-contact-info li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        color: var(--text-secondary);
+      }
+
+      .footer-contact-info i {
+        color: #a259ff;
+        font-size: 18px;
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+      }
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .social-icon {
+        color: #ffffff;
+        font-size: 1.5rem;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+      }
+
+      .social-icon:hover {
+        color: var(--primary-color);
+      }
+
+      .footer-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links li a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links li a:hover {
+        color: var(--primary-color);
+      }
+
+      .footer-contact-info {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-contact-info li {
+        margin-bottom: 10px;
+      }
+
+      .footer-contact-info i {
+        margin-right: 10px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .copyright {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+      }
+
+      /* Header/Navbar Styles */
+      .header {
+        padding: 15px 0;
+        background: rgba(10, 16, 31, 0.8);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(162, 89, 255, 0.1);
+      }
+
+      .navbar {
+        padding: 0;
+      }
+
+      .navbar-brand {
+        padding: 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-img {
+        height: 40px;
+        width: auto;
+        margin-right: 10px;
+      }
+
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 0;
+      }
+
+      .navbar-toggler {
+        border: none;
+        color: #ffffff;
+        padding: 0;
+        font-size: 1.5rem;
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+        outline: none;
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(162, 89, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      }
+
+      .nav-item {
+        margin-left: 10px;
+      }
+
+      .nav-link {
+        color: #e0e0e0;
+        font-weight: 500;
+        padding: 10px 15px;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+      }
+
+      .nav-link:hover {
+        color: #a259ff;
+        background: rgba(162, 89, 255, 0.1);
+      }
+
+      .nav-link.active {
+        color: #a259ff;
+        background: rgba(162, 89, 255, 0.15);
+        font-weight: 600;
+      }
+
+      .btn-demo {
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #a259ff, #6c63ff);
+        border: none;
+        color: #ffffff;
+      }
+
+      .btn-demo:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(162, 89, 255, 0.3);
+        background: linear-gradient(135deg, #9040ff, #5545ff);
+      }
+
+      @media (max-width: 991px) {
+        .navbar-collapse {
+          background: rgba(10, 16, 31, 0.95);
+          border-radius: 10px;
+          padding: 20px;
+          margin-top: 15px;
+          border: 1px solid rgba(162, 89, 255, 0.1);
+        }
+
+        .nav-item {
+          margin-left: 0;
+          margin-bottom: 10px;
+        }
+
+        .nav-item:last-child {
+          margin-bottom: 0;
+        }
+
+        .nav-item.ms-3 {
+          margin-left: 0 !important;
+          margin-top: 15px;
+        }
+
+        .btn-demo {
+          display: block;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header/Navigation -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <div class="logo">
+                <img
+                  src="Images/logo.png"
+                  alt="AI Gen Pro Logo"
+                  class="logo-img"
+                />
+                <span class="logo-text">AI Gen Pro</span>
+              </div>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="industries.html"
+                    >Industries</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item ms-3">
+                  <a
+                    class="btn btn-primary btn-demo calendly-open-button"
+                    href="#"
+                    aria-label="Get Started"
+                    >Get Started</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="industry-hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h1 class="industry-hero-title">
+              Smarter Patient Communication, Powered by AI
+            </h1>
+            <h2 class="industry-hero-subtitle">
+              Voice Agents and Chatbots That Handle Scheduling, Follow-ups, and
+              Patient Support — Automatically
+            </h2>
+            <div class="mt-4">
+              <span
+                class="highlight-badge"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <i class="fas fa-calendar-check"></i> 24/7 Appointment
+                Scheduling
+              </span>
+              <span
+                class="highlight-badge"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <i class="fas fa-bell"></i> Automated Patient Follow-Ups
+              </span>
+              <span
+                class="highlight-badge"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <i class="fas fa-chart-line"></i> Reduce No-Shows by 30%
+              </span>
+            </div>
+            <div class="industry-hero-description mt-4">
+              <p>
+                Patient communication is critical — but it can also drain your
+                staff's time and energy. AI Gen Pro's healthcare voice agents
+                and chatbots ensure no patient is ever left waiting, no
+                appointment is ever forgotten, and no follow-up is ever missed.
+              </p>
+            </div>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a
+                href="#"
+                class="btn btn-primary calendly-open-button"
+                aria-label="Schedule a Demo"
+                data-aos="fade-up"
+                data-aos-delay="600"
+                >Schedule a Demo</a
+              >
+              <a
+                href="#benefits"
+                class="btn btn-outline-light"
+                aria-label="Explore Benefits"
+                data-aos="fade-up"
+                data-aos-delay="700"
+                >Explore Benefits</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="hero-image-container position-relative">
+              <img
+                src="Images/healthcare.svg"
+                alt="Healthcare AI Solutions Illustration"
+                class="img-fluid hero-image"
+              />
+              <div class="image-glow"></div>
+              <!-- Floating icons -->
+              <div class="about-floating-icon about-icon-1">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <div class="about-floating-icon about-icon-2">
+                <i class="fas fa-stethoscope"></i>
+              </div>
+              <div class="about-floating-icon about-icon-3">
+                <i class="fas fa-user-md"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center" data-aos="fade-up">
+            <h2 class="section-title">Healthcare, Simplified with AI</h2>
+            <div class="section-description mx-auto" style="max-width: 800px">
+              <p>
+                AI Gen Pro's healthcare voice agents and chatbots ensure no
+                patient is ever left waiting, no appointment is ever forgotten,
+                and no follow-up is ever missed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Benefits Section -->
+    <section id="benefits" class="section">
+      <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2 class="section-title">Core Benefits</h2>
+          <p class="section-subtitle">
+            AI-powered features to transform patient communication and clinical
+            operations
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Benefit 1 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-calendar-check"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">24/7 Appointment Scheduling</h3>
+                <p class="benefit-text">
+                  Patients can book, reschedule, or cancel appointments anytime,
+                  even outside office hours.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-bell"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">
+                  Automated Reminders and Follow-Ups
+                </h3>
+                <p class="benefit-text">
+                  Send friendly SMS or voice call reminders automatically,
+                  reducing missed appointments and increasing patient
+                  satisfaction.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-prescription-bottle-alt"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">
+                  Prescription and Care Plan Reminders
+                </h3>
+                <p class="benefit-text">
+                  Remind patients about medication refills, upcoming lab tests,
+                  or care plan steps, improving treatment adherence.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 4 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-clipboard-list"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">Intake and Triage Automation</h3>
+                <p class="benefit-text">
+                  Capture basic information before appointments to speed up
+                  check-ins and better prepare your team.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 5 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">Natural Patient Conversations</h3>
+                <p class="benefit-text">
+                  AI that speaks in a caring, empathetic tone — building trust
+                  with patients.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 6 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-language"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">Multilingual AI Agents</h3>
+                <p class="benefit-text">
+                  Offer seamless communication to patients in multiple
+                  languages, breaking language barriers and expanding your reach
+                  globally.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 7 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="700">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">HIPAA-Compliant Options Available</h3>
+                <p class="benefit-text">
+                  Secure, compliant solutions available to protect sensitive
+                  patient data.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 8 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="800">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-plug"></i>
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">Plug-and-Play Setup</h3>
+                <p class="benefit-text">
+                  Integrates easily with your practice management systems like
+                  Kareo, Athenahealth, Epic, or custom setups.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2 class="section-title">Traditional vs. AI-Powered Clinics</h2>
+          <p class="section-subtitle">
+            See how our AI solutions compare to traditional approaches
+          </p>
+        </div>
+
+        <div class="comparison-table" data-aos="fade-up">
+          <div class="table-responsive">
+            <table
+              class="table table-borderless"
+              style="background-color: transparent !important"
+            >
+              <thead>
+                <tr>
+                  <th
+                    style="
+                      width: 25%;
+                      background-color: rgba(108, 99, 255, 0.3) !important;
+                      color: #a259ff;
+                    "
+                  >
+                    Feature
+                  </th>
+                  <th
+                    style="
+                      width: 37.5%;
+                      background-color: rgba(108, 99, 255, 0.3) !important;
+                      color: #a259ff;
+                    "
+                  >
+                    Traditional Clinic
+                  </th>
+                  <th
+                    style="
+                      width: 37.5%;
+                      background-color: rgba(108, 99, 255, 0.3) !important;
+                      color: #a259ff;
+                    "
+                  >
+                    AI Gen Pro Healthcare Solutions
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="feature"
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Appointment Scheduling
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Manual calls during office hours
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    24/7 self-service scheduling
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="feature"
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Patient Reminders
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Manual or inconsistent
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Automated, reliable reminders
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="feature"
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Follow-Up
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Staff-intensive
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    AI-driven, consistent outreach
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="feature"
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Prescription Management
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Reactive
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Proactive patient reminders
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="feature"
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Patient Communication
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Slow, inconsistent
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Fast, consistent, friendly AI
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="feature"
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Multi-language Support
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Limited
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.12) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Fluent multilingual capabilities
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="feature"
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Setup
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Complex, resource-heavy
+                  </td>
+                  <td
+                    style="
+                      background-color: rgba(108, 99, 255, 0.15) !important;
+                      color: #ffffff;
+                    "
+                  >
+                    Easy, ready-to-go integration
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-container" data-aos="zoom-in">
+          <div class="cta-content text-center">
+            <h2 class="cta-title" data-aos="fade-up">
+              Your 24/7 Patient Engagement Partner Awaits
+            </h2>
+            <div class="row justify-content-center mt-4">
+              <div class="col-md-8">
+                <div class="row">
+                  <div
+                    class="col-md-4 mb-3"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
+                    <div class="highlight-box text-center">
+                      <div class="highlight-text">
+                        <i class="fas fa-check-circle me-2"></i> Happier
+                        Patients
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-md-4 mb-3"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <div class="highlight-box text-center">
+                      <div class="highlight-text">
+                        <i class="fas fa-check-circle me-2"></i> Streamlined
+                        Workload
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-md-4 mb-3"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    <div class="highlight-box text-center">
+                      <div class="highlight-text">
+                        <i class="fas fa-check-circle me-2"></i> Better Outcomes
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+              <a
+                href="https://wa.me/7058052505"
+                target="_blank"
+                class="btn btn-primary btn-lg"
+                data-aos="fade-up"
+                data-aos-delay="400"
+                aria-label="Contact Us Today"
+                >Contact Us Today</a
+              >
+              <a
+                href="#"
+                class="btn btn-outline-light btn-lg calendly-open-button"
+                data-aos="fade-up"
+                data-aos-delay="500"
+                aria-label="Schedule a Demo"
+                >Schedule a Demo</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-shapes">
+        <div class="cta-shape shape-1"></div>
+        <div class="cta-shape shape-2"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div
+            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
+            <div class="footer-brand">
+              <div class="logo">
+                <img
+                  src="Images/logo.png"
+                  alt="AI Gen Pro Logo"
+                  class="logo-img"
+                />
+                <span class="logo-text">AI Gen Pro</span>
+              </div>
+              <p class="footer-desc">
+                Revolutionizing business operations with cutting-edge AI
+                solutions that drive real results.
+              </p>
+              <div class="social-icons">
+                <a
+                  href="https://wa.me/7058052505"
+                  class="social-icon"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a href="#" class="social-icon" aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/aigen.pro/"
+                  class="social-icon"
+                  aria-label="Instagram"
+                  target="_blank"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-2 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h4 class="footer-title">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="industries.html">Industries</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-2 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <h4 class="footer-title">Industries</h4>
+            <ul class="footer-links">
+              <li><a href="e-commerce.html">E-commerce</a></li>
+              <li><a href="healthcare.html">Healthcare</a></li>
+              <li><a href="real-estate.html">Real Estate</a></li>
+              <li><a href="industries.html">View All</a></li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <h4 class="footer-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="services.html#ai-calling">AI Calling</a></li>
+              <li>
+                <a href="services.html#workflow-automation"
+                  >Workflow Automation</a
+                >
+              </li>
+              <li><a href="services.html#ai-chatbots">Chatbots</a></li>
+              <li><a href="services.html">Custom Solutions</a></li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-2 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-left"
+            data-aos-delay="400"
+          >
+            <h4 class="footer-title">Contact Us</h4>
+            <ul class="footer-contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>New Delhi, India</span>
+              </li>
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel:+917058052505">+91 7058052505</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:contact@aigenpro.com">contact@aigenpro.in</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>
+            <p class="copyright text-center">
+              © 2025 AI Gen Pro. All rights reserved. Made by Mitul Srivastava
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Calendly Modal -->
+    <div
+      class="modal fade"
+      id="calendlyModal"
+      tabindex="-1"
+      aria-labelledby="calendlyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="calendlyModalLabel">
+              Schedule a Meeting
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="calendly-inline-widget"
+              data-url="https://calendly.com/aigenpro900?background_color=1a1a1a&text_color=ffffff&primary_color=a259ff"
+              style="min-width: 320px; height: 700px"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+        offset: 50,
+        anchorPlacement: "top-bottom",
+        disable: "mobile",
+      });
+
+      // Calendly Modal Functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendlyButtons = document.querySelectorAll(
+          ".calendly-open-button"
+        );
+        const calendlyModal = new bootstrap.Modal(
+          document.getElementById("calendlyModal")
+        );
+
+        calendlyButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+            calendlyModal.show();
+          });
+
+          // For accessibility - allow keyboard interaction
+          button.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              calendlyModal.show();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

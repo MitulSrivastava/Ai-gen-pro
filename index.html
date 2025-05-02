@@ -75,7 +75,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
               <div class="logo">
                 <img
                   src="Images/logo.png"
@@ -111,13 +111,12 @@
                   <a class="nav-link" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact </a>
+                  <a class="nav-link" href="contact.html">Contact</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ms-3">
                   <a
                     class="btn btn-primary btn-demo calendly-open-button"
                     href="#"
-                    target="_blank"
                     aria-label="Get Started"
                     >Get Started</a
                   >
@@ -391,43 +390,115 @@
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
+    <!-- Industries Section -->
+    <section class="industries-section" id="industries">
       <div class="container">
-        <div class="text-center">
-          <h2 class="section-title">Results Our Clients Love</h2>
+        <div class="text-center mb-5">
+          <h2 class="section-title" data-aos="fade-up">Industries We Serve</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+            Tailored AI solutions for your specific industry needs
+          </p>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="testimonial-container">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    "AI Gen Pro automated our follow-ups and doubled our
-                    bookings. We saved over 30 hours a month!"
-                  </p>
-                  <div class="testimonial-author">— Wellness Studio Owner</div>
-                </div>
+        <div class="row">
+          <!-- E-commerce Industry Card -->
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="industry-card">
+              <div class="industry-icon">
+                <i class="fas fa-shopping-cart"></i>
               </div>
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    "The AI call agent they built replaced our phone
-                    receptionist and works 24/7 without missing a beat."
-                  </p>
-                  <div class="testimonial-author">— Startup Founder</div>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-buttons text-center">
-              <a
-                href="#"
-                class="btn btn-primary calendly-open-button"
-                aria-label="Talk to Our Experts"
-                >Talk to Our Experts</a
+              <h3 class="industry-title">E-commerce</h3>
+              <p class="industry-description">
+                Boost sales and streamline operations with AI-powered product
+                recommendations, inventory forecasting, and 24/7 customer
+                support chatbots.
+              </p>
+              <ul class="industry-features">
+                <li>
+                  <i class="fas fa-check-circle"></i> Smart product
+                  recommendations
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Inventory optimization
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Customer support
+                  automation
+                </li>
+              </ul>
+              <a href="industries.html" class="btn btn-outline-primary mt-3"
+                >Learn More</a
               >
             </div>
           </div>
+
+          <!-- Healthcare Industry Card -->
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="industry-card">
+              <div class="industry-icon">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <h3 class="industry-title">Healthcare</h3>
+              <p class="industry-description">
+                Enhance patient care and reduce administrative burden with AI
+                solutions for appointment scheduling, patient follow-ups, and
+                workflow automation.
+              </p>
+              <ul class="industry-features">
+                <li>
+                  <i class="fas fa-check-circle"></i> Appointment management
+                </li>
+                <li><i class="fas fa-check-circle"></i> Patient engagement</li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Administrative automation
+                </li>
+              </ul>
+              <a href="industries.html" class="btn btn-outline-primary mt-3"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <!-- Real Estate Industry Card -->
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="industry-card">
+              <div class="industry-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3 class="industry-title">Real Estate</h3>
+              <p class="industry-description">
+                Transform your property business with AI-powered lead
+                qualification, virtual property tours, and automated client
+                communications.
+              </p>
+              <ul class="industry-features">
+                <li><i class="fas fa-check-circle"></i> Lead qualification</li>
+                <li><i class="fas fa-check-circle"></i> Property matching</li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Follow-up automation
+                </li>
+              </ul>
+              <a href="industries.html" class="btn btn-outline-primary mt-3"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
+          <a href="industries.html" class="btn btn-gradient btn-lg"
+            >Explore All Industries</a
+          >
         </div>
       </div>
     </section>
@@ -471,7 +542,7 @@
                 <img
                   src="Images/logo.png"
                   alt="AI Gen Pro Logo"
-                  class="logo-img"
+                  class="footer-logo-img"
                 />
                 <span class="logo-text">AI Gen Pro</span>
               </div>
@@ -484,12 +555,17 @@
                   href="https://wa.me/7058052505"
                   class="social-icon"
                   target="_blank"
+                  aria-label="WhatsApp"
                   ><i class="fab fa-whatsapp"></i
                 ></a>
-                <a href="#" class="social-icon"
+                <a href="#" class="social-icon" aria-label="LinkedIn"
                   ><i class="fab fa-linkedin"></i
                 ></a>
-                <a href="#" class="social-icon"
+                <a
+                  href="https://www.instagram.com/aigen.pro/"
+                  class="social-icon"
+                  aria-label="Instagram"
+                  target="_blank"
                   ><i class="fab fa-instagram"></i
                 ></a>
               </div>
@@ -510,6 +586,19 @@
             </ul>
           </div>
           <div
+            class="col-lg-2 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <h4 class="footer-title">Industries</h4>
+            <ul class="footer-links">
+              <li><a href="e-commerce.html">E-commerce</a></li>
+              <li><a href="healthcare.html">Healthcare</a></li>
+              <li><a href="real-estate.html">Real Estate</a></li>
+              <li><a href="industries.html">View All</a></li>
+            </ul>
+          </div>
+          <div
             class="col-lg-3 col-md-6 mb-4 mb-lg-0"
             data-aos="fade-up"
             data-aos-delay="300"
@@ -527,7 +616,7 @@
             </ul>
           </div>
           <div
-            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            class="col-lg-2 col-md-6 mb-4 mb-lg-0"
             data-aos="fade-left"
             data-aos-delay="400"
           >
@@ -597,14 +686,207 @@
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
-      .footer-title {
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin-bottom: 25px;
-        color: #a259ff;
+      /* Root level fixes to prevent any horizontal scrolling */
+      :root {
+        overflow-x: hidden;
+      }
+
+      /* Hide horizontal scrollbars and force element constraint */
+      html,
+      body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        width: 100% !important;
         position: relative;
-        padding-bottom: 10px;
-        text-align: center;
+      }
+
+      /* Reset all container widths */
+      div,
+      section,
+      header,
+      footer,
+      nav,
+      main,
+      article,
+      aside {
+        max-width: 100vw;
+        box-sizing: border-box;
+      }
+
+      /* Ensure even absolutely positioned elements stay in bounds */
+      * {
+        max-width: 100vw;
+        box-sizing: border-box;
+      }
+
+      /* Extra fix for hero shapes causing overflow */
+      .hero-shapes,
+      .shape,
+      .cta-shapes,
+      .cta-shape {
+        overflow: hidden !important;
+        max-width: 100vw;
+        position: absolute;
+        pointer-events: none;
+      }
+
+      /* Fix for images causing overflow */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Add flex constraint to header */
+      .header .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .header .container-fluid,
+      .header .row,
+      .header .navbar {
+        width: 100%;
+        overflow-x: clip;
+      }
+
+      /* Add consistent logo styling */
+      /* ====== HEADER ====== */
+      .header {
+        padding: 15px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+        background: rgba(13, 13, 22, 0.8);
+        border-bottom: var(--glass-border);
+      }
+
+      .navbar {
+        padding: 0;
+      }
+
+      .navbar-brand {
+        padding: 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-img {
+        height: 50px;
+        width: 50px;
+        object-fit: contain;
+      }
+
+      .logo-text {
+        font-weight: 700;
+        font-size: 22px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .navbar-toggler {
+        border: none;
+        color: var(--text-color);
+      }
+
+      /* Change hamburger menu color to purple */
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(162, 89, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      }
+
+      .nav-link {
+        color: var(--text-secondary);
+        font-weight: 500;
+        padding: 10px 15px;
+        transition: var(--transition);
+      }
+
+      .nav-link:hover {
+        color: var(--text-color);
+      }
+
+      .navbar-nav .nav-link.active {
+        color: #a259ff !important;
+        font-weight: 600;
+      }
+
+      .btn-login {
+        background: transparent;
+        color: var(--text-color);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .btn-login:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .btn-demo {
+        font-weight: 600;
+      }
+
+      /* Fix for mobile horizontal scroll */
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+      }
+
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+
+      .container {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow-x: hidden;
+      }
+
+      @media (min-width: 992px) {
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .container {
+          max-width: 100%;
+        }
+      }
+
+      .row {
+        margin-left: -15px;
+        margin-right: -15px;
+        flex-wrap: wrap;
+      }
+
+      /* Ensure all sections stay within viewport */
+      section {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+
+      /* Ensure responsive tables don't cause overflow */
+      .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       .footer-links {
@@ -656,6 +938,348 @@
       .btn-close {
         color: #ffffff;
         filter: invert(1) brightness(200%);
+      }
+
+      /* Industries Section Styles */
+      .industries-section {
+        padding: 80px 0;
+        background: linear-gradient(
+          135deg,
+          rgba(108, 99, 255, 0.1),
+          rgba(162, 89, 255, 0.1)
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .industries-section::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle,
+          rgba(162, 89, 255, 0.2) 0%,
+          transparent 70%
+        );
+        z-index: 0;
+      }
+
+      .industry-card {
+        background: rgba(30, 30, 46, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        height: 100%;
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+      }
+
+      .industry-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(108, 99, 255, 0.2);
+        border-color: rgba(162, 89, 255, 0.3);
+      }
+
+      .industry-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #6c63ff, #a259ff);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        color: white;
+        font-size: 24px;
+        transition: all 0.3s ease;
+      }
+
+      .industry-card:hover .industry-icon {
+        transform: scale(1.1);
+      }
+
+      .industry-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #fff;
+      }
+
+      .industry-description {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      .industries-section .section-title {
+        color: #fff;
+      }
+
+      .industries-section .section-subtitle {
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 700px;
+        margin: 0 auto 20px;
+      }
+
+      .industry-features {
+        padding-left: 0;
+        list-style-type: none;
+      }
+
+      .industry-features li {
+        margin-bottom: 10px;
+        padding-left: 25px;
+        position: relative;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .industry-features li i {
+        color: #a259ff;
+        position: absolute;
+        left: 0;
+      }
+
+      .btn-outline-primary {
+        background: transparent;
+        color: #a259ff;
+        border: 1px solid #a259ff;
+        transition: all 0.3s ease;
+      }
+
+      .btn-outline-primary:hover {
+        background: #a259ff;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(162, 89, 255, 0.3);
+      }
+
+      /* Gradient Button */
+      .btn-gradient {
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 12px 30px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-gradient:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        color: white;
+      }
+
+      .btn-gradient:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .industry-card {
+          margin-bottom: 30px;
+          padding: 20px;
+        }
+
+        .industry-icon {
+          width: 60px;
+          height: 60px;
+          font-size: 20px;
+        }
+
+        .industry-title {
+          font-size: 20px;
+        }
+
+        /* Mobile fixes for horizontal scroll */
+        html,
+        body {
+          overflow-x: hidden !important;
+          width: 100% !important;
+          position: relative;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        .container,
+        .container-fluid {
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          overflow-x: hidden !important;
+        }
+
+        .row {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          width: 100% !important;
+        }
+
+        .col-md-4,
+        .col-lg-4,
+        .col-md-6,
+        .col,
+        [class*="col-"] {
+          padding-left: 10px !important;
+          padding-right: 10px !important;
+          width: 100%;
+        }
+
+        /* Fix for logo in mobile view */
+        .navbar-brand {
+          margin-right: 0;
+          padding: 0;
+        }
+
+        .logo {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+
+        .logo-img {
+          width: 50px;
+          height: 50px;
+        }
+
+        .logo-text {
+          font-size: 1.4rem;
+          white-space: nowrap;
+        }
+
+        .navbar-toggler {
+          padding: 4px 8px;
+          font-size: 1rem;
+        }
+
+        .header .navbar {
+          padding: 5px 0;
+        }
+
+        .hero-title {
+          font-size: 2.2rem !important;
+          word-wrap: break-word;
+        }
+
+        .hero-shapes,
+        .cta-shapes {
+          overflow: hidden !important;
+          max-width: 100% !important;
+        }
+
+        .shape,
+        .cta-shape {
+          max-width: 80% !important;
+        }
+
+        .dashboard-mockup img {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .advanced-features-grid {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .advanced-feature-card {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .hero-buttons {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+        }
+
+        .hero-buttons .btn {
+          width: 100%;
+          max-width: 280px;
+        }
+
+        .footer-title {
+          margin-top: 30px;
+        }
+
+        .hero-text {
+          font-size: 1rem;
+          padding: 0 15px;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .section-subtitle {
+          font-size: 1rem;
+        }
+
+        .value-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+        }
+
+        .cta-title {
+          font-size: 1.8rem;
+        }
+
+        .header {
+          padding: 10px 0;
+        }
+      }
+
+      /* Ensure images are responsive */
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+
+      /* ====== FOOTER STYLING ====== */
+      .footer {
+        background-color: #0b0b0f;
+        padding: 80px 0 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #a259ff;
+        position: relative;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+
+      .footer-bottom {
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-logo-img {
+        height: 50px;
+        width: 50px;
+        object-fit: contain;
       }
     </style>
     <script>

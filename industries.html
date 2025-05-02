@@ -248,18 +248,26 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 12px;
         padding: 30px;
-        transition: all 0.3s ease;
+        transition: all 0.4s ease-in-out;
         height: 100%;
         position: relative;
         overflow: hidden;
         backdrop-filter: blur(10px);
+        z-index: 2;
+      }
+
+      .industry-card.active {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
       }
 
       .industry-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        background: rgba(108, 99, 255, 0.1);
-        border: 1px solid rgba(162, 89, 255, 0.3);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .industry-card:hover .industry-icon {
+        transform: scale(1.1);
       }
 
       .industry-icon {
@@ -270,6 +278,11 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         display: inline-block;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .industry-icon.float {
+        animation: float 3s ease-in-out infinite;
       }
 
       .industry-title {
@@ -368,6 +381,16 @@
         filter: invert(1) brightness(200%);
       }
 
+      .footer-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #a259ff;
+        position: relative;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+
       .footer-links {
         list-style: none;
         padding: 0;
@@ -441,11 +464,16 @@
       @media (max-width: 991px) {
         .industries-hero {
           padding: 120px 0 80px;
-          min-height: auto;
+          min-height: 80vh;
+          text-align: center;
         }
 
         .industries-hero-title {
           font-size: 2.5rem;
+        }
+
+        .industries-hero-subtitle {
+          font-size: 1.5rem;
         }
 
         .hero-badges {
@@ -453,12 +481,240 @@
         }
 
         .hero-cta {
-          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .hero-image-container {
+          margin-top: 40px;
+        }
+
+        .shape-1,
+        .shape-2,
+        .shape-3 {
+          transform: scale(0.7);
+        }
+
+        .about-floating-icon {
+          width: 50px;
+          height: 50px;
+          font-size: 18px;
+        }
+      }
+
+      /* Mobile fixes for horizontal scrolling */
+      @media (max-width: 767px) {
+        html,
+        body {
+          overflow-x: hidden;
+          width: 100%;
+          position: relative;
+        }
+
+        .container {
+          padding-left: 15px;
+          padding-right: 15px;
+          width: 100%;
+          max-width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .row {
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+        }
+
+        .col,
+        [class*="col-"] {
+          padding-right: 10px;
+          padding-left: 10px;
+        }
+
+        .industry-card {
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+
+        .industry-icon {
+          width: 50px;
+          height: 50px;
+          font-size: 20px;
+        }
+
+        .industry-title {
+          font-size: 1.3rem;
+        }
+
+        .industry-list li {
+          font-size: 0.9rem;
+        }
+
+        .hero-image {
+          max-width: 100%;
+          height: auto;
         }
 
         .about-floating-icon {
           display: none;
         }
+
+        .industries-hero-description {
+          font-size: 1rem;
+        }
+
+        .hero-badge {
+          font-size: 0.8rem;
+          padding: 6px 12px;
+        }
+
+        .hero-cta .btn {
+          width: 100%;
+          padding: 10px 20px;
+        }
+
+        .hero-shapes {
+          overflow: hidden;
+          max-width: 100%;
+        }
+
+        .shape {
+          max-width: 80%;
+        }
+
+        .industries-hero-title {
+          font-size: 2.2rem;
+          word-wrap: break-word;
+        }
+
+        .other-industries-list {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .other-industry-item {
+          margin-bottom: 10px;
+          flex-basis: calc(50% - 15px);
+        }
+      }
+
+      /* Additional animations for effects */
+      .industry-card {
+        transition: all 0.4s ease-in-out;
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+      }
+
+      .industry-card.active {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .industry-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .industry-card:hover .industry-icon {
+        transform: scale(1.1);
+      }
+
+      .industry-icon {
+        transition: all 0.4s ease-in-out;
+      }
+
+      .industry-icon.float {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      /* Parallax effect for hero */
+      .hero-image {
+        transition: transform 0.2s ease-out;
+      }
+
+      /* Enhanced button effects */
+      .btn {
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.2) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transition: left 0.7s ease-in-out;
+      }
+
+      .btn:hover::after {
+        left: 100%;
+      }
+
+      /* Custom animations for hero elements */
+      .hero-badge {
+        transition: all 0.3s ease;
+      }
+
+      .hero-badge:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .shape {
+        animation: pulse 4s infinite alternate;
+      }
+
+      .shape-1 {
+        animation-delay: 0s;
+      }
+
+      .shape-2 {
+        animation-delay: 1s;
+      }
+
+      .shape-3 {
+        animation-delay: 2s;
+      }
+
+      @keyframes pulse {
+        0% {
+          opacity: 0.5;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0.8;
+          transform: scale(1.1);
+        }
+      }
+
+      /* Change hamburger menu color to purple */
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(162, 89, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
       }
     </style>
   </head>
@@ -601,8 +857,8 @@
                 <li>Automated abandoned cart follow-up</li>
               </ul>
               <a
-                href="#"
-                class="btn btn-outline-light btn-sm"
+                href="e-commerce.html"
+                class="learn-more-btn"
                 aria-label="Learn More"
                 >Learn More</a
               >
@@ -626,8 +882,8 @@
                 <li>Automate buyer/seller onboarding</li>
               </ul>
               <a
-                href="#"
-                class="btn btn-outline-light btn-sm"
+                href="real-estate.html"
+                class="learn-more-btn"
                 aria-label="Learn More"
                 >Learn More</a
               >
@@ -651,8 +907,8 @@
                 <li>Prescription refill reminders</li>
               </ul>
               <a
-                href="#"
-                class="btn btn-outline-light btn-sm"
+                href="healthcare.html"
+                class="learn-more-btn"
                 aria-label="Learn More"
                 >Learn More</a
               >
@@ -675,10 +931,7 @@
                 <li>Automate post-session follow-ups & reviews</li>
                 <li>Reduce no-shows, boost retention</li>
               </ul>
-              <a
-                href="#"
-                class="btn btn-outline-light btn-sm"
-                aria-label="Learn More"
+              <a href="#" class="learn-more-btn" aria-label="Learn More"
                 >Learn More</a
               >
             </div>
@@ -700,10 +953,7 @@
                 <li>Schedule investor meetings via AI agents</li>
                 <li>Track portfolio company KPIs</li>
               </ul>
-              <a
-                href="#"
-                class="btn btn-outline-light btn-sm"
-                aria-label="Learn More"
+              <a href="#" class="learn-more-btn" aria-label="Learn More"
                 >Learn More</a
               >
             </div>
@@ -725,10 +975,7 @@
                 <li>Create content via AI</li>
                 <li>Send milestone messages & collect testimonials</li>
               </ul>
-              <a
-                href="#"
-                class="btn btn-outline-light btn-sm"
-                aria-label="Learn More"
+              <a href="#" class="learn-more-btn" aria-label="Learn More"
                 >Learn More</a
               >
             </div>
@@ -861,12 +1108,17 @@
                   href="https://wa.me/7058052505"
                   class="social-icon"
                   target="_blank"
+                  aria-label="WhatsApp"
                   ><i class="fab fa-whatsapp"></i
                 ></a>
-                <a href="#" class="social-icon"
+                <a href="#" class="social-icon" aria-label="LinkedIn"
                   ><i class="fab fa-linkedin"></i
                 ></a>
-                <a href="#" class="social-icon"
+                <a
+                  href="https://www.instagram.com/aigen.pro/"
+                  class="social-icon"
+                  aria-label="Instagram"
+                  target="_blank"
                   ><i class="fab fa-instagram"></i
                 ></a>
               </div>
@@ -887,6 +1139,19 @@
             </ul>
           </div>
           <div
+            class="col-lg-2 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <h4 class="footer-title">Industries</h4>
+            <ul class="footer-links">
+              <li><a href="e-commerce.html">E-commerce</a></li>
+              <li><a href="healthcare.html">Healthcare</a></li>
+              <li><a href="real-estate.html">Real Estate</a></li>
+              <li><a href="industries.html">View All</a></li>
+            </ul>
+          </div>
+          <div
             class="col-lg-3 col-md-6 mb-4 mb-lg-0"
             data-aos="fade-up"
             data-aos-delay="300"
@@ -904,7 +1169,7 @@
             </ul>
           </div>
           <div
-            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            class="col-lg-2 col-md-6 mb-4 mb-lg-0"
             data-aos="fade-left"
             data-aos-delay="400"
           >
@@ -974,39 +1239,98 @@
     <!-- Custom JS -->
     <script src="script.js"></script>
     <script>
+      // Initialize AOS
       AOS.init({
         duration: 800,
         easing: "ease-in-out",
-        once: true,
-        mirror: false,
-        offset: 50,
-        anchorPlacement: "top-bottom",
-        disable: "mobile",
+        once: false,
+        mirror: true,
       });
 
-      // Calendly Modal Functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        const calendlyButtons = document.querySelectorAll(
-          ".calendly-open-button"
-        );
-        const calendlyModal = new bootstrap.Modal(
-          document.getElementById("calendlyModal")
-        );
-
-        calendlyButtons.forEach((button) => {
-          button.addEventListener("click", function (e) {
-            e.preventDefault();
-            calendlyModal.show();
-          });
-
-          // For accessibility - allow keyboard interaction
-          button.addEventListener("keydown", function (e) {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              calendlyModal.show();
-            }
-          });
+      // Add active class to cards when scrolled into view
+      window.addEventListener("scroll", function () {
+        const cards = document.querySelectorAll(".industry-card");
+        cards.forEach((card) => {
+          if (isInViewport(card)) {
+            card.classList.add("active");
+          } else {
+            card.classList.remove("active");
+          }
         });
+      });
+
+      // Button hover animation
+      const buttons = document.querySelectorAll(".btn");
+      buttons.forEach((button) => {
+        button.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-3px)";
+          this.style.boxShadow = "0 7px 14px rgba(0, 0, 0, 0.1)";
+        });
+
+        button.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0)";
+          this.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
+        });
+      });
+
+      // Parallax effect for hero image
+      const heroImage = document.querySelector(".hero-image");
+      if (heroImage) {
+        document.addEventListener("mousemove", function (e) {
+          const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+          const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+          heroImage.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+      }
+
+      // Floating animation for industry card icons
+      const industryIcons = document.querySelectorAll(".industry-icon");
+      setInterval(() => {
+        industryIcons.forEach((icon) => {
+          icon.classList.toggle("float");
+        });
+      }, 2000);
+
+      // Helper function to check if element is in viewport
+      function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <=
+            (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+
+      // Calendly modal functionality
+      const calendlyButtons = document.querySelectorAll("[data-calendly]");
+      calendlyButtons.forEach((button) => {
+        button.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.getElementById("calendlyModal").style.display = "flex";
+        });
+
+        button.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            document.getElementById("calendlyModal").style.display = "flex";
+          }
+        });
+      });
+
+      document
+        .querySelector(".close-modal")
+        .addEventListener("click", function () {
+          document.getElementById("calendlyModal").style.display = "none";
+        });
+
+      window.addEventListener("click", function (e) {
+        const modal = document.getElementById("calendlyModal");
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
       });
     </script>
   </body>
