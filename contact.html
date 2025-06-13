@@ -551,6 +551,46 @@
       .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(162, 89, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
       }
+
+      /* Add new styles for contact links */
+      .contact-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: inline-block;
+        padding: 5px 10px;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+      }
+
+      .contact-link:hover {
+        color: var(--secondary-color);
+        text-decoration: underline;
+      }
+
+      .social-icon-contact {
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .social-icon-contact:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 6px 15px rgba(162, 89, 255, 0.4);
+      }
+
+      .feature-card {
+        position: relative;
+        z-index: 1;
+      }
+
+      .feature-card * {
+        position: relative;
+        z-index: 2;
+      }
     </style>
   </head>
   <body>
@@ -686,13 +726,8 @@
                     </div>
                     <h3 class="feature-title">Email Us</h3>
                     <p class="feature-text">
-                      <a href="mailto:support@aigenpro.com" class="contact-link"
-                        >support@aigenpro.com</a
-                      >
-                    </p>
-                    <p class="feature-text">
-                      <a href="mailto:sales@aigenpro.com" class="contact-link"
-                        >sales@aigenpro.com</a
+                      <a href="mailto:Rohit@aigenpro.in" class="contact-link"
+                        >Rohit@aigenpro.in</a
                       >
                     </p>
                   </div>
@@ -729,7 +764,7 @@
                         <i class="fab fa-whatsapp"></i>
                       </a>
                       <a
-                        href="https://www.linkedin.com/"
+                        href="https://www.linkedin.com/company/aigen-pro/"
                         target="_blank"
                         class="social-icon-contact"
                         aria-label="LinkedIn"
@@ -737,7 +772,7 @@
                         <i class="fab fa-linkedin-in"></i>
                       </a>
                       <a
-                        href="https://www.instagram.com/"
+                        href="https://www.instagram.com/aigen.pro/"
                         target="_blank"
                         class="social-icon-contact"
                         aria-label="Instagram"
@@ -747,28 +782,12 @@
                     </div>
                     <div class="social-icons-contact mt-3">
                       <a
-                        href="https://twitter.com/"
-                        target="_blank"
-                        class="social-icon-contact"
-                        aria-label="Twitter"
-                      >
-                        <i class="fab fa-twitter"></i>
-                      </a>
-                      <a
-                        href="https://www.facebook.com/"
+                        href="https://www.facebook.com/aigenpro"
                         target="_blank"
                         class="social-icon-contact"
                         aria-label="Facebook"
                       >
                         <i class="fab fa-facebook-f"></i>
-                      </a>
-                      <a
-                        href="https://t.me/aigenpro"
-                        target="_blank"
-                        class="social-icon-contact"
-                        aria-label="Telegram"
-                      >
-                        <i class="fab fa-telegram-plane"></i>
                       </a>
                     </div>
                   </div>
@@ -1482,7 +1501,8 @@
               Let's work together to create a custom solution for your needs
             </p>
             <a
-              href="https://wa.me/7058052505"
+              href="https://forms.gle/gpbSGduZoH4eqDkK8"
+              target="_blank"
               target="_blank"
               class="btn btn-primary btn-lg"
               data-aos="fade-up"
