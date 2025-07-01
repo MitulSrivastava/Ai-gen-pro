@@ -28,6 +28,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- Chatbot CSS -->
+    <link rel="stylesheet" href="chatbot.css" />
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
@@ -1354,5 +1356,92 @@
         }
       });
     </script>
+
+    <!-- Chatbot Integration -->
+    <!-- Chat Overlay for mobile -->
+    <div class="chat-overlay" id="chatOverlay" onclick="toggleChat()"></div>
+
+    <!-- Chat Button -->
+    <button class="chat-button" id="chatButton" onclick="toggleChat()">
+      <i class="fas fa-comment" id="chatIcon"></i>
+      <div
+        class="notification-badge"
+        id="notificationBadge"
+        style="display: none"
+      >
+        1
+      </div>
+    </button>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+      <div class="chat-header">
+        <div class="bot-avatar">
+          <img src="Images/logo.png" alt="" />
+        </div>
+        <div class="bot-info">
+          <div class="bot-name">Jerry AI</div>
+          <div class="bot-status">
+            <div class="status-indicator"></div>
+            Online
+          </div>
+        </div>
+        <button class="minimize-btn" onclick="toggleChat()">
+          <i class="fas fa-minus"></i>
+        </button>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <div class="welcome-screen" id="welcomeScreen">
+          <div class="welcome-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div class="welcome-title">Hi there!</div>
+          <div class="welcome-subtitle">
+            I'm Jerry, your AI assistant. How can I help you today?
+          </div>
+          <div class="quick-actions">
+            <div
+              class="quick-action"
+              onclick="sendQuickMessage('Tell me about your services')"
+            >
+              <i class="fas fa-info-circle"></i>
+              Tell me about your services
+            </div>
+            <div
+              class="quick-action"
+              onclick="sendQuickMessage('How can you help me?')"
+            >
+              <i class="fas fa-question-circle"></i>
+              How can you help me?
+            </div>
+            <div
+              class="quick-action"
+              onclick="sendQuickMessage('What are your capabilities?')"
+            >
+              <i class="fas fa-cog"></i>
+              What are your capabilities?
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-container">
+        <textarea
+          class="chat-input"
+          id="chatInput"
+          placeholder="Type your message..."
+          rows="1"
+          onkeypress="handleKeyPress(event)"
+          oninput="autoResize(this)"
+        ></textarea>
+        <button class="send-button" id="sendButton" onclick="sendMessage()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Chatbot JavaScript -->
+    <script src="chatbot.js"></script>
   </body>
 </html>
